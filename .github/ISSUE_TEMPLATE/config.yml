@@ -1,6 +1,7 @@
 blank_issues_enabled: false
 
 contact_links:
-  - name: Question
-    url: https://github.com/bluenviron/mediamtx/discussions/new?category=questions
-    about: Ask the community for help
+  - name: Support
+    url: https://github.com/FlyInkTV/FlyInkStream-Engine/discussions/new?category=questions
+    about: Ask the Fly Ink® community or support team for help
+
