@@ -14,7 +14,11 @@
 
 <br>
 
-_MediaMTX_ is a ready-to-use and zero-dependency real-time media server and media proxy that allows to publish, read, proxy, record and playback video and audio streams. It has been conceived as a "media router" that routes media streams from one end to the other.
+_Fly Ink Stream Engine™_ powers _Fly Ink®’s_ low-latency OTT infrastructure and SaaS suite.
+
+Built on an optimized open-source fork, it supports RTMP, SRT, WebRTC, RTSP, and LL-HLS with scalable ingest, playback, recording, live transcoding, repackaging, adaptive bitrate streaming, load balancing, and failover.
+
+Designed for creators, media brands, and B2B platforms seeking scalable, customizable live video delivery.
 
 Live streams can be published to the server with:
 
@@ -65,9 +69,15 @@ Live streams be recorded and played back with:
 * Run hooks (external commands) when clients connect, disconnect, read or publish streams
 * Compatible with Linux, Windows and macOS, does not require any dependency or interpreter, it's a single executable
 
-**Note about rtsp-simple-server**
+**Origins of Fly Ink Stream Engine™**
 
-_rtsp-simple-server_ has been rebranded as _MediaMTX_. The reason is pretty obvious: this project started as a RTSP server but has evolved into a much more versatile product that is not tied to the RTSP protocol anymore. Nothing will change regarding license, features and backward compatibility.
+_Fly Ink Stream Engine™_ is a branded, optimized fork developed by _Fly Ink Tattoo Parlor LLC._ It builds upon the open-source project originally named _rtsp-simple-server_, which was later rebranded as _MediaMTX_ by its creator, _aler9_.
+
+The original project began as a focused RTSP server but evolved into a versatile, multi-protocol media server and proxy supporting RTMP, SRT, WebRTC, LL-HLS, and more.
+
+_Fly Ink Stream Engine™_ extends this foundation with custom enhancements, branding, and scalability features tailored for _Fly Ink®’s_ low-latency OTT infrastructure and SaaS platform.
+
+All original license terms, features, and backward compatibility remain fully preserved.
 
 ## Table of contents
 
