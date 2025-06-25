@@ -601,7 +601,7 @@ The resulting stream is available in path `/cam`.
 
 #### Raspberry Pi Cameras
 
-_MediaMTX_ natively supports most of the Raspberry Pi Camera models, enabling high-quality and low-latency video streaming from the camera to any user, for any purpose. There are a couple of requirements:
+_Fly Ink Stream Engine™_ natively supports most of the Raspberry Pi Camera models, enabling high-quality and low-latency video streaming from the camera to any user, for any purpose. There are a couple of requirements:
 
 1. The server must run on a Raspberry Pi, with one of the following operating systems:
 
@@ -812,7 +812,7 @@ Known clients that can publish with RTSP are [FFmpeg](#ffmpeg), [GStreamer](#gst
 
 #### RTSP cameras and servers
 
-Most IP cameras expose their video stream by using a RTSP server that is embedded into the camera itself. In particular, cameras that are compliant with ONVIF profile S or T meet this requirement. You can use _MediaMTX_ to connect to one or multiple existing RTSP servers and read their video streams:
+Most IP cameras expose their video stream by using a RTSP server that is embedded into the camera itself. In particular, cameras that are compliant with ONVIF profile S or T meet this requirement. You can use _Fly Ink Stream Engine™_ to connect to one or multiple existing RTSP servers and read their video streams:
 
 ```yml
 paths:
@@ -854,7 +854,7 @@ Known clients that can publish with RTMP are [FFmpeg](#ffmpeg), [GStreamer](#gst
 
 #### RTMP cameras and servers
 
-You can use _MediaMTX_ to connect to one or multiple existing RTMP servers and read their video streams:
+You can use _Fly Ink Stream Engine™_ to connect to one or multiple existing RTMP servers and read their video streams:
 
 ```yml
 paths:
@@ -867,7 +867,7 @@ The resulting stream is available in path `/proxied`.
 
 #### HLS cameras and servers
 
-HLS is a streaming protocol that works by splitting streams into segments, and by serving these segments and a playlist with the HTTP protocol. You can use _MediaMTX_ to connect to one or multiple existing HLS servers and read their video streams:
+HLS is a streaming protocol that works by splitting streams into segments, and by serving these segments and a playlist with the HTTP protocol. You can use _Fly Ink Stream Engine™_ to connect to one or multiple existing HLS servers and read their video streams:
 
 ```yml
 paths:
@@ -906,7 +906,7 @@ paths:
 
 The resulting stream is available in path `/mypath`.
 
-If the listening IP is a multicast IP, _MediaMTX_ listens for incoming multicast packets on all network interfaces. It is possible to listen on a single interface only by using the `interface` parameter:
+If the listening IP is a multicast IP, _Fly Ink Stream Engine™_ listens for incoming multicast packets on all network interfaces. It is possible to listen on a single interface only by using the `interface` parameter:
 
 ```yml
 paths:
@@ -1021,7 +1021,7 @@ snap install vlc
 
 ##### Encrypted streams
 
-At the moment VLC doesn't support reading encrypted RTSP streams. However, you can use a proxy like [stunnel](https://www.stunnel.org) or [nginx](https://nginx.org/) or a local _MediaMTX_ instance to decrypt streams before reading them.
+At the moment VLC doesn't support reading encrypted RTSP streams. However, you can use a proxy like [stunnel](https://www.stunnel.org) or [nginx](https://nginx.org/) or a local _Fly Ink Stream Engine™_ instance to decrypt streams before reading them.
 
 #### Unity
 
@@ -1646,7 +1646,7 @@ All available recording parameters are listed in the [sample configuration file]
 
 Be aware that not all codecs can be saved with all formats, as described in the compatibility matrix at the beginning of the README.
 
-To upload recordings to a remote location, you can use _MediaMTX_ together with [rclone](https://github.com/rclone/rclone), a command line tool that provides file synchronization capabilities with a huge variety of services (including S3, FTP, SMB, Google Drive):
+To upload recordings to a remote location, you can use _Fly Ink Stream Engine™_ together with [rclone](https://github.com/rclone/rclone), a command line tool that provides file synchronization capabilities with a huge variety of services (including S3, FTP, SMB, Google Drive):
 
 1. Download and install [rclone](https://github.com/rclone/rclone).
 
