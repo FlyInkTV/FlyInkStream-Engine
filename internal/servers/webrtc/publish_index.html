@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
+<title>Fly Ink Stream Engine WebRTC Publisher</title>
 <style>
 html, body {
 	margin: 0;
@@ -84,7 +85,16 @@ select option {
 <script defer src="./publisher.js"></script>
 </head>
 <body>
-
+<video id="video" muted autoplay></video>
+<script>
+// Add playsinline attribute for browsers that support it
+document.addEventListener('DOMContentLoaded', function() {
+  var video = document.getElementById('video');
+  if (video && typeof video.playsInline !== "undefined") {
+    video.setAttribute('playsinline', '');
+  }
+});
+</script>
 <video id="video" muted autoplay playsinline></video>
 
 <div id="controls">
@@ -139,7 +149,7 @@ select option {
 			<label for="audio-bitrate">audio bitrate (kbps)</label>
 			<input id="audio-bitrate" type="text" value="32" />
 		</div>
-
+    <button id="publish-button" type="button">publish</button>
 		<div class="item">
 			<label for="audio-voice">optimize for voice</label>
 			<div>
