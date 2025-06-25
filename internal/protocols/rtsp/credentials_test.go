@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/bluenviron/gortsplib/v4/pkg/base"
-	"github.com/bluenviron/mediamtx/internal/auth"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/auth"
 	"github.com/stretchr/testify/require"
 )
 
@@ -24,3 +24,7 @@ func TestCredentials(t *testing.T) {
 		Pass: "mypass",
 	}, c)
 }
+
+
+
+

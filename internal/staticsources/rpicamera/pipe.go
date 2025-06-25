@@ -76,3 +76,7 @@ func (p *pipe) write(byts []byte) error {
 	_, err = syscall.Write(p.writeFD, byts)
 	return err
 }
+
+
+
+

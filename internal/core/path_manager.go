@@ -6,14 +6,14 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/bluenviron/mediamtx/internal/auth"
-	"github.com/bluenviron/mediamtx/internal/conf"
-	"github.com/bluenviron/mediamtx/internal/defs"
-	"github.com/bluenviron/mediamtx/internal/externalcmd"
-	"github.com/bluenviron/mediamtx/internal/logger"
-	"github.com/bluenviron/mediamtx/internal/metrics"
-	"github.com/bluenviron/mediamtx/internal/servers/hls"
-	"github.com/bluenviron/mediamtx/internal/stream"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/auth"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/defs"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/externalcmd"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/metrics"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/servers/hls"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/stream"
 )
 
 func pathConfCanBeUpdated(oldPathConf *conf.Path, newPathConf *conf.Path) bool {
@@ -623,3 +623,7 @@ func (pm *pathManager) APIPathsGet(name string) (*defs.APIPath, error) {
 		return nil, fmt.Errorf("terminated")
 	}
 }
+
+
+
+

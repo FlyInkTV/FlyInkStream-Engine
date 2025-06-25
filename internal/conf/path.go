@@ -12,7 +12,7 @@ import (
 	"time"
 
 	"github.com/bluenviron/gortsplib/v4/pkg/base"
-	"github.com/bluenviron/mediamtx/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
 )
 
 var rePathName = regexp.MustCompile(`^[0-9a-zA-Z_\-/\.~:]+$`)
@@ -248,7 +248,7 @@ func (pconf *Path) setDefaults() {
 	pconf.RPICameraAfMode = "continuous"
 	pconf.RPICameraAfRange = "normal"
 	pconf.RPICameraAfSpeed = "normal"
-	pconf.RPICameraTextOverlay = "%Y-%m-%d %H:%M:%S - MediaMTX"
+	pconf.RPICameraTextOverlay = "%Y-%m-%d %H:%M:%S - FlyInkStream-Engine"
 	pconf.RPICameraCodec = "auto"
 	pconf.RPICameraIDRPeriod = 60
 	pconf.RPICameraBitrate = 5000000
@@ -696,3 +696,7 @@ func (pconf Path) HasOnDemandStaticSource() bool {
 func (pconf Path) HasOnDemandPublisher() bool {
 	return pconf.RunOnDemand != ""
 }
+
+
+
+

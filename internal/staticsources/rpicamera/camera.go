@@ -21,7 +21,7 @@ import (
 
 const (
 	libraryToCheckArchitecture = "libc.so.6"
-	dumpPrefix                 = "/dev/shm/mediamtx-rpicamera-"
+	dumpPrefix                 = "/dev/shm/FlyInkStream-Engine-rpicamera-"
 	executableName             = "mtxrpicam"
 )
 
@@ -389,3 +389,7 @@ func (c *camera) wait() error {
 	<-c.done
 	return c.finalErr
 }
+
+
+
+

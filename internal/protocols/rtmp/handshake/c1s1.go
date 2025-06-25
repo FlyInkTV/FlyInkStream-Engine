@@ -187,3 +187,7 @@ func (c C1S1) Write(w io.Writer) error {
 	_, err := w.Write(buf)
 	return err
 }
+
+
+
+

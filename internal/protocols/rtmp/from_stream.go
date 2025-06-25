@@ -10,9 +10,9 @@ import (
 	"github.com/bluenviron/mediacommon/v2/pkg/codecs/h264"
 	"github.com/bluenviron/mediacommon/v2/pkg/codecs/mpeg1audio"
 	"github.com/bluenviron/mediacommon/v2/pkg/codecs/mpeg4audio"
-	"github.com/bluenviron/mediamtx/internal/logger"
-	"github.com/bluenviron/mediamtx/internal/stream"
-	"github.com/bluenviron/mediamtx/internal/unit"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/stream"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/unit"
 )
 
 var errNoSupportedCodecsFrom = errors.New(
@@ -183,7 +183,7 @@ func setupAudio(
 	return nil
 }
 
-// FromStream maps a MediaMTX stream to a RTMP stream.
+// FromStream maps a FlyInkStream-Engine stream to a RTMP stream.
 func FromStream(
 	str *stream.Stream,
 	reader stream.Reader,
@@ -235,3 +235,7 @@ func FromStream(
 
 	return nil
 }
+
+
+
+

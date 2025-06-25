@@ -13,3 +13,7 @@ RUN mkdir /out \
 
 USER user
 ENTRYPOINT [ "/start.sh" ]
+
+
+
+

@@ -1,9 +1,9 @@
 package test
 
 import (
-	"github.com/bluenviron/mediamtx/internal/conf"
-	"github.com/bluenviron/mediamtx/internal/defs"
-	"github.com/bluenviron/mediamtx/internal/stream"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/defs"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/stream"
 )
 
 // PathManager is a dummy path manager.
@@ -33,3 +33,7 @@ func (pm *PathManager) AddPublisher(req defs.PathAddPublisherReq) (defs.Path, er
 func (pm *PathManager) AddReader(req defs.PathAddReaderReq) (defs.Path, *stream.Stream, error) {
 	return pm.AddReaderImpl(req)
 }
+
+
+
+

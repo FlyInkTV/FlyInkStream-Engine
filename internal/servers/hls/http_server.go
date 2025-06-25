@@ -11,12 +11,12 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/bluenviron/mediamtx/internal/auth"
-	"github.com/bluenviron/mediamtx/internal/conf"
-	"github.com/bluenviron/mediamtx/internal/defs"
-	"github.com/bluenviron/mediamtx/internal/logger"
-	"github.com/bluenviron/mediamtx/internal/protocols/httpp"
-	"github.com/bluenviron/mediamtx/internal/restrictnetwork"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/auth"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/defs"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/protocols/httpp"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/restrictnetwork"
 )
 
 //go:generate go run ./hlsjsdownloader
@@ -163,7 +163,7 @@ func (s *httpServer) onRequest(ctx *gin.Context) {
 		var terr auth.Error
 		if errors.As(err, &terr) {
 			if terr.AskCredentials {
-				ctx.Header("WWW-Authenticate", `Basic realm="mediamtx"`)
+				ctx.Header("WWW-Authenticate", `Basic realm="FlyInkStream-Engine"`)
 				ctx.Writer.WriteHeader(http.StatusUnauthorized)
 				return
 			}
@@ -210,3 +210,7 @@ func (s *httpServer) onRequest(ctx *gin.Context) {
 		mi.handleRequest(ctx)
 	}
 }
+
+
+
+

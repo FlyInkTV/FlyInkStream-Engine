@@ -429,3 +429,7 @@ class MediaMTXWebRTCPublisher {
 }
 
 window.MediaMTXWebRTCPublisher = MediaMTXWebRTCPublisher;
+
+
+
+

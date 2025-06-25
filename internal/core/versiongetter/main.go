@@ -118,7 +118,7 @@ func tagFromGit() error {
 }
 
 func do() error {
-	log.Println("getting mediamtx version...")
+	log.Println("getting FlyInkStream-Engine version...")
 
 	err := tagFromGit()
 	if err != nil {
@@ -139,3 +139,7 @@ func main() {
 		os.Exit(1)
 	}
 }
+
+
+
+

@@ -1,4 +1,4 @@
-DOCKER_REPOSITORY = bluenviron/mediamtx
+DOCKER_REPOSITORY = bluenviron/flyinkstream-engine
 
 dockerhub:
 	$(eval VERSION := $(shell git describe --tags | tr -d v))
@@ -37,3 +37,7 @@ dockerhub:
 	--push
 
 	docker buildx rm builder
+
+
+
+

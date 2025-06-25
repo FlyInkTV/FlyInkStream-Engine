@@ -1,4 +1,4 @@
-BINARY_NAME = mediamtx
+BINARY_NAME = flyinkstream-engine
 
 define DOCKERFILE_BINARIES
 FROM $(BASE_IMAGE) AS build-base
@@ -10,43 +10,43 @@ COPY . ./
 ENV CGO_ENABLED=0
 RUN rm -rf tmp binaries
 RUN mkdir tmp binaries
-RUN cp mediamtx.yml LICENSE tmp/
+RUN cp flyinkstream-engine.yml LICENSE tmp/
 RUN go generate ./...
 
 FROM build-base AS build-windows-amd64
 ENV GOOS=windows GOARCH=amd64
 RUN go build -o "tmp/$(BINARY_NAME).exe"
-RUN cd tmp && zip -q "../binaries/$(BINARY_NAME)_$$(cat ../internal/core/VERSION)_windows_amd64.zip" "$(BINARY_NAME).exe" mediamtx.yml LICENSE
+RUN cd tmp && zip -q "../binaries/$(BINARY_NAME)_$$(cat ../internal/core/VERSION)_windows_amd64.zip" "$(BINARY_NAME).exe" flyinkstream-engine.yml LICENSE
 
 FROM build-base AS build-linux-amd64
 ENV GOOS=linux GOARCH=amd64
 RUN go build -o "tmp/$(BINARY_NAME)"
-RUN tar -C tmp -czf "binaries/$(BINARY_NAME)_$$(cat internal/core/VERSION)_linux_amd64.tar.gz" --owner=0 --group=0 "$(BINARY_NAME)" mediamtx.yml LICENSE
+RUN tar -C tmp -czf "binaries/$(BINARY_NAME)_$$(cat internal/core/VERSION)_linux_amd64.tar.gz" --owner=0 --group=0 "$(BINARY_NAME)" flyinkstream-engine.yml LICENSE
 
 FROM build-base AS build-darwin-amd64
 ENV GOOS=darwin GOARCH=amd64
 RUN go build -o "tmp/$(BINARY_NAME)"
-RUN tar -C tmp -czf "binaries/$(BINARY_NAME)_$$(cat internal/core/VERSION)_darwin_amd64.tar.gz" --owner=0 --group=0 "$(BINARY_NAME)" mediamtx.yml LICENSE
+RUN tar -C tmp -czf "binaries/$(BINARY_NAME)_$$(cat internal/core/VERSION)_darwin_amd64.tar.gz" --owner=0 --group=0 "$(BINARY_NAME)" flyinkstream-engine.yml LICENSE
 
 FROM build-base AS build-darwin-arm64
 ENV GOOS=darwin GOARCH=arm64
 RUN go build -o "tmp/$(BINARY_NAME)"
-RUN tar -C tmp -czf "binaries/$(BINARY_NAME)_$$(cat internal/core/VERSION)_darwin_arm64.tar.gz" --owner=0 --group=0 "$(BINARY_NAME)" mediamtx.yml LICENSE
+RUN tar -C tmp -czf "binaries/$(BINARY_NAME)_$$(cat internal/core/VERSION)_darwin_arm64.tar.gz" --owner=0 --group=0 "$(BINARY_NAME)" flyinkstream-engine.yml LICENSE
 
 FROM build-base AS build-linux-armv6
 ENV GOOS=linux GOARCH=arm GOARM=6
 RUN go build -o "tmp/$(BINARY_NAME)"
-RUN tar -C tmp -czf "binaries/$(BINARY_NAME)_$$(cat internal/core/VERSION)_linux_armv6.tar.gz" --owner=0 --group=0 "$(BINARY_NAME)" mediamtx.yml LICENSE
+RUN tar -C tmp -czf "binaries/$(BINARY_NAME)_$$(cat internal/core/VERSION)_linux_armv6.tar.gz" --owner=0 --group=0 "$(BINARY_NAME)" flyinkstream-engine.yml LICENSE
 
 FROM build-base AS build-linux-armv7
 ENV GOOS=linux GOARCH=arm GOARM=7
 RUN go build -o "tmp/$(BINARY_NAME)"
-RUN tar -C tmp -czf "binaries/$(BINARY_NAME)_$$(cat internal/core/VERSION)_linux_armv7.tar.gz" --owner=0 --group=0 "$(BINARY_NAME)" mediamtx.yml LICENSE
+RUN tar -C tmp -czf "binaries/$(BINARY_NAME)_$$(cat internal/core/VERSION)_linux_armv7.tar.gz" --owner=0 --group=0 "$(BINARY_NAME)" flyinkstream-engine.yml LICENSE
 
 FROM build-base AS build-linux-arm64
 ENV GOOS=linux GOARCH=arm64
 RUN go build -o "tmp/$(BINARY_NAME)"
-RUN tar -C tmp -czf "binaries/$(BINARY_NAME)_$$(cat internal/core/VERSION)_linux_arm64.tar.gz" --owner=0 --group=0 "$(BINARY_NAME)" mediamtx.yml LICENSE
+RUN tar -C tmp -czf "binaries/$(BINARY_NAME)_$$(cat internal/core/VERSION)_linux_arm64.tar.gz" --owner=0 --group=0 "$(BINARY_NAME)" flyinkstream-engine.yml LICENSE
 
 FROM $(BASE_IMAGE)
 COPY --from=build-windows-amd64 /s/binaries /s/binaries
@@ -65,3 +65,7 @@ binaries:
 	docker run --rm -v "$(shell pwd):/out" \
 	temp sh -c "rm -rf /out/binaries && cp -r /s/binaries /out/"
 	sudo chown -R $(shell id -u):$(shell id -g) binaries
+
+
+
+

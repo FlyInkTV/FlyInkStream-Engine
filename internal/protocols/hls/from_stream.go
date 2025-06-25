@@ -9,9 +9,9 @@ import (
 	"github.com/bluenviron/gohlslib/v2/pkg/codecs"
 	"github.com/bluenviron/gortsplib/v4/pkg/description"
 	"github.com/bluenviron/gortsplib/v4/pkg/format"
-	"github.com/bluenviron/mediamtx/internal/logger"
-	"github.com/bluenviron/mediamtx/internal/stream"
-	"github.com/bluenviron/mediamtx/internal/unit"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/stream"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/unit"
 )
 
 // ErrNoSupportedCodecs is returned by FromStream when there are no supported codecs.
@@ -270,7 +270,7 @@ func setupAudioTracks(
 	}
 }
 
-// FromStream maps a MediaMTX stream to a HLS muxer.
+// FromStream maps a FlyInkStream-Engine stream to a HLS muxer.
 func FromStream(
 	stream *stream.Stream,
 	reader stream.Reader,
@@ -308,3 +308,7 @@ func FromStream(
 
 	return nil
 }
+
+
+
+

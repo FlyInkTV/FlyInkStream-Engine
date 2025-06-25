@@ -40,3 +40,7 @@ func TestCounterDumperDoNotReport(t *testing.T) {
 
 	<-time.After(2 * time.Second)
 }
+
+
+
+

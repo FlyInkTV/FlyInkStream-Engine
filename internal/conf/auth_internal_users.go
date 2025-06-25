@@ -3,7 +3,7 @@ package conf
 import (
 	"fmt"
 
-	"github.com/bluenviron/mediamtx/internal/conf/jsonwrapper"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf/jsonwrapper"
 )
 
 // AuthInternalUserPermission is a permission of a user.
@@ -60,3 +60,7 @@ func (s *AuthInternalUserPermissions) UnmarshalJSON(b []byte) error {
 	*s = nil
 	return jsonwrapper.Unmarshal(b, (*[]AuthInternalUserPermission)(s))
 }
+
+
+
+

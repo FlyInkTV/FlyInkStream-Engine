@@ -15,11 +15,11 @@ import (
 	"github.com/bluenviron/mediacommon/v2/pkg/formats/mp4"
 	"github.com/stretchr/testify/require"
 
-	"github.com/bluenviron/mediamtx/internal/conf"
-	"github.com/bluenviron/mediamtx/internal/logger"
-	"github.com/bluenviron/mediamtx/internal/stream"
-	"github.com/bluenviron/mediamtx/internal/test"
-	"github.com/bluenviron/mediamtx/internal/unit"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/stream"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/test"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/unit"
 )
 
 func TestRecorder(t *testing.T) {
@@ -136,7 +136,7 @@ func TestRecorder(t *testing.T) {
 			require.NoError(t, err)
 			defer strm.Close()
 
-			dir, err := os.MkdirTemp("", "mediamtx-agent")
+			dir, err := os.MkdirTemp("", "FlyInkStream-Engine-agent")
 			require.NoError(t, err)
 			defer os.RemoveAll(dir)
 
@@ -350,7 +350,7 @@ func TestRecorderFMP4NegativeDTS(t *testing.T) {
 	require.NoError(t, err)
 	defer strm.Close()
 
-	dir, err := os.MkdirTemp("", "mediamtx-agent")
+	dir, err := os.MkdirTemp("", "FlyInkStream-Engine-agent")
 	require.NoError(t, err)
 	defer os.RemoveAll(dir)
 
@@ -438,7 +438,7 @@ func TestRecorderSkipTracksPartial(t *testing.T) {
 			require.NoError(t, err)
 			defer strm.Close()
 
-			dir, err := os.MkdirTemp("", "mediamtx-agent")
+			dir, err := os.MkdirTemp("", "FlyInkStream-Engine-agent")
 			require.NoError(t, err)
 			defer os.RemoveAll(dir)
 
@@ -499,7 +499,7 @@ func TestRecorderSkipTracksFull(t *testing.T) {
 			require.NoError(t, err)
 			defer strm.Close()
 
-			dir, err := os.MkdirTemp("", "mediamtx-agent")
+			dir, err := os.MkdirTemp("", "FlyInkStream-Engine-agent")
 			require.NoError(t, err)
 			defer os.RemoveAll(dir)
 
@@ -562,7 +562,7 @@ func TestRecorderFMP4SegmentSwitch(t *testing.T) {
 	require.NoError(t, err)
 	defer strm.Close()
 
-	dir, err := os.MkdirTemp("", "mediamtx-agent")
+	dir, err := os.MkdirTemp("", "FlyInkStream-Engine-agent")
 	require.NoError(t, err)
 	defer os.RemoveAll(dir)
 
@@ -655,3 +655,7 @@ func TestRecorderFMP4SegmentSwitch(t *testing.T) {
 
 	require.Equal(t, 2, n)
 }
+
+
+
+

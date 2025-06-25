@@ -11,7 +11,7 @@ body:
     id: version
     attributes:
       label: Which version are you using?
-      description: MediaMTX version or commit
+      description: FlyInkStream-Engine version or commit
     validations:
       required: true
 
@@ -64,7 +64,7 @@ body:
     attributes:
       label: Network dump
       description: |
-        If the bug arises when using MediaMTX with external hardware or software, the most helpful content you can provide is a dump of the data exchanged between the server and the target (network dump).
+        If the bug arises when using FlyInkStream-Engine with external hardware or software, the most helpful content you can provide is a dump of the data exchanged between the server and the target (network dump).
 
         That can be generated in this way:
           1. Download wireshark (https://www.wireshark.org/)
@@ -74,3 +74,7 @@ body:
           4. Stop capturing, save the result in .pcap format
           5. Attach
       placeholder: Attach the pcap file by dragging it here
+
+
+
+

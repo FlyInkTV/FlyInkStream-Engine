@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/bluenviron/mediamtx/internal/core"
-	"github.com/bluenviron/mediamtx/internal/test"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/core"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/test"
 )
 
 func newInstance(conf string) (*core.Core, bool) {
@@ -35,15 +35,15 @@ func newContainer(image string, name string, args []string) (*container, error) 
 		name: name,
 	}
 
-	exec.Command("docker", "kill", "mediamtx-test-"+name).Run()
-	exec.Command("docker", "wait", "mediamtx-test-"+name).Run()
+	exec.Command("docker", "kill", "FlyInkStream-Engine-test-"+name).Run()
+	exec.Command("docker", "wait", "FlyInkStream-Engine-test-"+name).Run()
 
 	// --network=host is needed to test multicast
 	cmd := []string{
 		"docker", "run",
 		"--network=host",
-		"--name=mediamtx-test-" + name,
-		"mediamtx-test-" + image,
+		"--name=FlyInkStream-Engine-test-" + name,
+		"FlyInkStream-Engine-test-" + image,
 	}
 	cmd = append(cmd, args...)
 	ecmd := exec.Command(cmd[0], cmd[1:]...)
@@ -61,15 +61,19 @@ func newContainer(image string, name string, args []string) (*container, error) 
 }
 
 func (c *container) close() {
-	exec.Command("docker", "kill", "mediamtx-test-"+c.name).Run()
-	exec.Command("docker", "wait", "mediamtx-test-"+c.name).Run()
-	exec.Command("docker", "rm", "mediamtx-test-"+c.name).Run()
+	exec.Command("docker", "kill", "FlyInkStream-Engine-test-"+c.name).Run()
+	exec.Command("docker", "wait", "FlyInkStream-Engine-test-"+c.name).Run()
+	exec.Command("docker", "rm", "FlyInkStream-Engine-test-"+c.name).Run()
 }
 
 func (c *container) wait() int {
-	exec.Command("docker", "wait", "mediamtx-test-"+c.name).Run()
-	out, _ := exec.Command("docker", "inspect", "mediamtx-test-"+c.name,
+	exec.Command("docker", "wait", "FlyInkStream-Engine-test-"+c.name).Run()
+	out, _ := exec.Command("docker", "inspect", "FlyInkStream-Engine-test-"+c.name,
 		"-f", "{{.State.ExitCode}}").Output()
 	code, _ := strconv.ParseInt(string(out[:len(out)-1]), 10, 32)
 	return int(code)
 }
+
+
+
+

@@ -15,8 +15,8 @@ import (
 	"github.com/bluenviron/mediacommon/v2/pkg/formats/fmp4/seekablebuffer"
 	"github.com/bluenviron/mediacommon/v2/pkg/formats/mp4"
 	"github.com/bluenviron/mediacommon/v2/pkg/formats/pmp4"
-	"github.com/bluenviron/mediamtx/internal/conf"
-	"github.com/bluenviron/mediamtx/internal/test"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/test"
 	"github.com/stretchr/testify/require"
 )
 
@@ -232,7 +232,7 @@ func TestOnGet(t *testing.T) {
 		"mp4",
 	} {
 		t.Run(format, func(t *testing.T) {
-			dir, err := os.MkdirTemp("", "mediamtx-playback")
+			dir, err := os.MkdirTemp("", "FlyInkStream-Engine-playback")
 			require.NoError(t, err)
 			defer os.RemoveAll(dir)
 
@@ -457,7 +457,7 @@ func TestOnGet(t *testing.T) {
 }
 
 func TestOnGetDifferentInit(t *testing.T) {
-	dir, err := os.MkdirTemp("", "mediamtx-playback")
+	dir, err := os.MkdirTemp("", "FlyInkStream-Engine-playback")
 	require.NoError(t, err)
 	defer os.RemoveAll(dir)
 
@@ -535,7 +535,7 @@ func TestOnGetDifferentInit(t *testing.T) {
 }
 
 func TestOnGetNTPCompensation(t *testing.T) {
-	dir, err := os.MkdirTemp("", "mediamtx-playback")
+	dir, err := os.MkdirTemp("", "FlyInkStream-Engine-playback")
 	require.NoError(t, err)
 	defer os.RemoveAll(dir)
 
@@ -680,7 +680,7 @@ func TestOnGetNTPCompensation(t *testing.T) {
 func TestOnGetInMiddleOfLastSample(t *testing.T) {
 	for _, format := range []string{"fmp4", "mp4"} {
 		t.Run(format, func(t *testing.T) {
-			dir, err := os.MkdirTemp("", "mediamtx-playback")
+			dir, err := os.MkdirTemp("", "FlyInkStream-Engine-playback")
 			require.NoError(t, err)
 			defer os.RemoveAll(dir)
 
@@ -775,7 +775,7 @@ func TestOnGetBetweenSegments(t *testing.T) {
 		"idr after",
 	} {
 		t.Run(ca, func(t *testing.T) {
-			dir, err := os.MkdirTemp("", "mediamtx-playback")
+			dir, err := os.MkdirTemp("", "FlyInkStream-Engine-playback")
 			require.NoError(t, err)
 			defer os.RemoveAll(dir)
 
@@ -946,3 +946,7 @@ func TestOnGetBetweenSegments(t *testing.T) {
 		})
 	}
 }
+
+
+
+

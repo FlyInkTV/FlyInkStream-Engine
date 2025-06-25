@@ -9,16 +9,16 @@ import (
 	"github.com/bluenviron/gortsplib/v4/pkg/format"
 	"github.com/bluenviron/mediacommon/v2/pkg/formats/mpegts"
 
-	"github.com/bluenviron/mediamtx/internal/logger"
-	"github.com/bluenviron/mediamtx/internal/stream"
-	"github.com/bluenviron/mediamtx/internal/unit"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/stream"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/unit"
 )
 
 var errNoSupportedCodecs = errors.New(
 	"the stream doesn't contain any supported codec, which are currently " +
 		"H265, H264, MPEG-4 Video, MPEG-1/2 Video, Opus, MPEG-4 Audio, MPEG-1 Audio, AC-3")
 
-// ToStream maps a MPEG-TS stream to a MediaMTX stream.
+// ToStream maps a MPEG-TS stream to a FlyInkStream-Engine stream.
 func ToStream(
 	r *mpegts.Reader,
 	stream **stream.Stream,
@@ -224,3 +224,7 @@ func ToStream(
 
 	return medias, nil
 }
+
+
+
+

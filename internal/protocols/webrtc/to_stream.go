@@ -9,7 +9,7 @@ import (
 	"github.com/bluenviron/gortsplib/v4/pkg/description"
 	"github.com/bluenviron/gortsplib/v4/pkg/format"
 	"github.com/bluenviron/gortsplib/v4/pkg/rtptime"
-	"github.com/bluenviron/mediamtx/internal/stream"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/stream"
 	"github.com/pion/rtp"
 	"github.com/pion/webrtc/v4"
 )
@@ -18,7 +18,7 @@ var errNoSupportedCodecsTo = errors.New(
 	"the stream doesn't contain any supported codec, which are currently " +
 		"AV1, VP9, VP8, H265, H264, Opus, G722, G711, LPCM")
 
-// ToStream maps a WebRTC connection to a MediaMTX stream.
+// ToStream maps a WebRTC connection to a FlyInkStream-Engine stream.
 func ToStream(
 	pc *PeerConnection,
 	stream **stream.Stream,
@@ -160,3 +160,7 @@ func ToStream(
 
 	return medias, nil
 }
+
+
+
+

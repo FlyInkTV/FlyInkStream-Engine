@@ -3,8 +3,8 @@ package defs
 import (
 	"net"
 
-	"github.com/bluenviron/mediamtx/internal/auth"
-	"github.com/bluenviron/mediamtx/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/auth"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
 	"github.com/google/uuid"
 )
 
@@ -41,3 +41,7 @@ func (r *PathAccessRequest) ToAuthRequest() *auth.Request {
 		CustomVerifyFunc: r.CustomVerifyFunc,
 	}
 }
+
+
+
+

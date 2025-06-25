@@ -10,3 +10,7 @@ type Chunk interface {
 	Read(r io.Reader, bodyLen uint32, hasExtendedTimestamp bool) error
 	Marshal(hasExtendedTimestamp bool) ([]byte, error)
 }
+
+
+
+

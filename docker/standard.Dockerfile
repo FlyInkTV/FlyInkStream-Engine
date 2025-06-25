@@ -12,4 +12,8 @@ FROM scratch
 ARG TARGETPLATFORM
 COPY --from=binaries /$TARGETPLATFORM /
 
-ENTRYPOINT [ "/mediamtx" ]
+ENTRYPOINT [ "/flyinkstream-engine" ]
+
+
+
+

@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/bluenviron/mediamtx/internal/conf/jsonwrapper"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf/jsonwrapper"
 )
 
 // AuthAction is an authentication action.
@@ -52,3 +52,7 @@ func (d *AuthAction) UnmarshalJSON(b []byte) error {
 func (d *AuthAction) UnmarshalEnv(_ string, v string) error {
 	return d.UnmarshalJSON([]byte(`"` + v + `"`))
 }
+
+
+
+

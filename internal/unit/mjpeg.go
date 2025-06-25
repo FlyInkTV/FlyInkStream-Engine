@@ -5,3 +5,7 @@ type MJPEG struct {
 	Base
 	Frame []byte
 }
+
+
+
+

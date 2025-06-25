@@ -26,3 +26,7 @@ func TestObjectGetFloat64(t *testing.T) {
 	require.Equal(t, true, ok)
 	require.Equal(t, float64(123), v)
 }
+
+
+
+

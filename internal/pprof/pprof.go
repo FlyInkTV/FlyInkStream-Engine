@@ -9,11 +9,11 @@ import (
 	"github.com/gin-contrib/pprof"
 	"github.com/gin-gonic/gin"
 
-	"github.com/bluenviron/mediamtx/internal/auth"
-	"github.com/bluenviron/mediamtx/internal/conf"
-	"github.com/bluenviron/mediamtx/internal/logger"
-	"github.com/bluenviron/mediamtx/internal/protocols/httpp"
-	"github.com/bluenviron/mediamtx/internal/restrictnetwork"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/auth"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/protocols/httpp"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/restrictnetwork"
 )
 
 type pprofAuthManager interface {
@@ -107,7 +107,7 @@ func (pp *PPROF) middlewareAuth(ctx *gin.Context) {
 	err := pp.AuthManager.Authenticate(req)
 	if err != nil {
 		if err.(auth.Error).AskCredentials { //nolint:errorlint
-			ctx.Header("WWW-Authenticate", `Basic realm="mediamtx"`)
+			ctx.Header("WWW-Authenticate", `Basic realm="FlyInkStream-Engine"`)
 			ctx.AbortWithStatus(http.StatusUnauthorized)
 			return
 		}
@@ -119,3 +119,7 @@ func (pp *PPROF) middlewareAuth(ctx *gin.Context) {
 		return
 	}
 }
+
+
+
+

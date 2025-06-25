@@ -6,8 +6,8 @@ import (
 
 	"github.com/bluenviron/gortsplib/v4/pkg/description"
 	"github.com/bluenviron/gortsplib/v4/pkg/format"
-	"github.com/bluenviron/mediamtx/internal/stream"
-	"github.com/bluenviron/mediamtx/internal/unit"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/stream"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/unit"
 )
 
 var errNoSupportedCodecsTo = errors.New(
@@ -24,7 +24,7 @@ func durationToTimestamp(d time.Duration, clockRate int) int64 {
 	return multiplyAndDivide(int64(d), int64(clockRate), int64(time.Second))
 }
 
-// ToStream maps a RTMP stream to a MediaMTX stream.
+// ToStream maps a RTMP stream to a FlyInkStream-Engine stream.
 func ToStream(r *Reader, stream **stream.Stream) ([]*description.Media, error) {
 	var medias []*description.Media
 
@@ -213,3 +213,7 @@ func ToStream(r *Reader, stream **stream.Stream) ([]*description.Media, error) {
 
 	return medias, nil
 }
+
+
+
+

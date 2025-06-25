@@ -63,7 +63,7 @@ func doSingle(version string, f string) error {
 		return err
 	}
 
-	res, err := http.Get("https://github.com/bluenviron/mediamtx-rpicamera/releases/download/" + version + "/" + f)
+	res, err := http.Get("https://github.com/FlyInkTV/FlyInkStream-Engine-rpicamera/releases/download/" + version + "/" + f)
 	if err != nil {
 		return err
 	}
@@ -103,7 +103,7 @@ func do() error {
 	}
 	version := strings.TrimSpace(string(buf))
 
-	log.Printf("downloading mediamtx-rpicamera %s...", version)
+	log.Printf("downloading FlyInkStream-Engine-rpicamera %s...", version)
 
 	for _, f := range []string{"mtxrpicam_32.tar.gz", "mtxrpicam_64.tar.gz"} {
 		err = doSingle(version, f)
@@ -123,3 +123,7 @@ func main() {
 		os.Exit(1)
 	}
 }
+
+
+
+

@@ -8,3 +8,7 @@ format:
 	echo "$$DOCKERFILE_FORMAT" | docker build -q . -f - -t temp
 	docker run --rm -it -v "$(shell pwd):/s" -w /s temp \
 	sh -c "gofumpt -l -w ."
+
+
+
+

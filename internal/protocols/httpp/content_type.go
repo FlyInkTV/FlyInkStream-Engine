@@ -6,3 +6,7 @@ import "strings"
 func ParseContentType(v string) string {
 	return strings.TrimSpace(strings.Split(v, ";")[0])
 }
+
+
+
+

@@ -3,7 +3,7 @@ package auth
 import (
 	"net"
 
-	"github.com/bluenviron/mediamtx/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
 	"github.com/google/uuid"
 )
 
@@ -30,3 +30,7 @@ type Request struct {
 	IP               net.IP
 	CustomVerifyFunc func(expectedUser string, expectedPass string) bool
 }
+
+
+
+

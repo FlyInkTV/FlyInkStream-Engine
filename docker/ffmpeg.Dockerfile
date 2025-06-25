@@ -14,4 +14,8 @@ RUN apk add --no-cache ffmpeg
 ARG TARGETPLATFORM
 COPY --from=binaries /$TARGETPLATFORM /
 
-ENTRYPOINT [ "/mediamtx" ]
+ENTRYPOINT [ "/flyinkstream-engine" ]
+
+
+
+

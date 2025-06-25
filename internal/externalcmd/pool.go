@@ -18,3 +18,7 @@ func (p *Pool) Initialize() error {
 func (p *Pool) Close() {
 	p.wg.Wait()
 }
+
+
+
+

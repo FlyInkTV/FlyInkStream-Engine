@@ -12,7 +12,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.org/x/crypto/nacl/secretbox"
 
-	"github.com/bluenviron/mediamtx/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
 )
 
 func createTempFile(byts []byte) (string, error) {
@@ -72,7 +72,7 @@ func TestConfFromFile(t *testing.T) {
 			RPICameraAfMode:            "continuous",
 			RPICameraAfRange:           "normal",
 			RPICameraAfSpeed:           "normal",
-			RPICameraTextOverlay:       "%Y-%m-%d %H:%M:%S - MediaMTX",
+			RPICameraTextOverlay:       "%Y-%m-%d %H:%M:%S - FlyInkStream-Engine",
 			RPICameraCodec:             "auto",
 			RPICameraIDRPeriod:         60,
 			RPICameraBitrate:           5000000,
@@ -461,9 +461,9 @@ func TestConfErrors(t *testing.T) {
 
 func TestSampleConfFile(t *testing.T) {
 	func() {
-		conf1, confPath1, err := Load("../../mediamtx.yml", nil, nil)
+		conf1, confPath1, err := Load("../../FlyInkStream-Engine.yml", nil, nil)
 		require.NoError(t, err)
-		require.Equal(t, "../../mediamtx.yml", confPath1)
+		require.Equal(t, "../../FlyInkStream-Engine.yml", confPath1)
 		conf1.Paths = make(map[string]*Path)
 		conf1.OptionalPaths = nil
 
@@ -475,9 +475,9 @@ func TestSampleConfFile(t *testing.T) {
 	}()
 
 	func() {
-		conf1, confPath1, err := Load("../../mediamtx.yml", nil, nil)
+		conf1, confPath1, err := Load("../../FlyInkStream-Engine.yml", nil, nil)
 		require.NoError(t, err)
-		require.Equal(t, "../../mediamtx.yml", confPath1)
+		require.Equal(t, "../../FlyInkStream-Engine.yml", confPath1)
 
 		tmpf, err := createTempFile([]byte("paths:\n  all_others:"))
 		require.NoError(t, err)
@@ -518,3 +518,7 @@ func TestConfOverrideDefaultSlices(t *testing.T) {
 		{},
 	}, conf.AuthHTTPExclude)
 }
+
+
+
+

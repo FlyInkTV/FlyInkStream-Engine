@@ -1,4 +1,4 @@
-module github.com/bluenviron/mediamtx
+module github.com/FlyInkTV/FlyInkStream-Engine
 
 go 1.24.0
 

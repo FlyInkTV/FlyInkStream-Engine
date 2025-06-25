@@ -33,3 +33,7 @@ func (d *destinationFile) log(t time.Time, level Level, format string, args ...i
 func (d *destinationFile) close() {
 	d.file.Close()
 }
+
+
+
+

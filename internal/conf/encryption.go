@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/bluenviron/mediamtx/internal/conf/jsonwrapper"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf/jsonwrapper"
 )
 
 // Encryption is the rtspEncryption / rtmpEncryption parameter.
@@ -63,3 +63,7 @@ func (d *Encryption) UnmarshalJSON(b []byte) error {
 func (d *Encryption) UnmarshalEnv(_ string, v string) error {
 	return d.UnmarshalJSON([]byte(`"` + v + `"`))
 }
+
+
+
+

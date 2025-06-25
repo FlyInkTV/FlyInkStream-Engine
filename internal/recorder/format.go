@@ -4,3 +4,7 @@ type format interface {
 	initialize() bool
 	close()
 }
+
+
+
+

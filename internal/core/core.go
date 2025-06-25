@@ -16,22 +16,22 @@ import (
 	"github.com/bluenviron/gortsplib/v4"
 	"github.com/gin-gonic/gin"
 
-	"github.com/bluenviron/mediamtx/internal/api"
-	"github.com/bluenviron/mediamtx/internal/auth"
-	"github.com/bluenviron/mediamtx/internal/conf"
-	"github.com/bluenviron/mediamtx/internal/confwatcher"
-	"github.com/bluenviron/mediamtx/internal/externalcmd"
-	"github.com/bluenviron/mediamtx/internal/logger"
-	"github.com/bluenviron/mediamtx/internal/metrics"
-	"github.com/bluenviron/mediamtx/internal/playback"
-	"github.com/bluenviron/mediamtx/internal/pprof"
-	"github.com/bluenviron/mediamtx/internal/recordcleaner"
-	"github.com/bluenviron/mediamtx/internal/rlimit"
-	"github.com/bluenviron/mediamtx/internal/servers/hls"
-	"github.com/bluenviron/mediamtx/internal/servers/rtmp"
-	"github.com/bluenviron/mediamtx/internal/servers/rtsp"
-	"github.com/bluenviron/mediamtx/internal/servers/srt"
-	"github.com/bluenviron/mediamtx/internal/servers/webrtc"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/api"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/auth"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/confwatcher"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/externalcmd"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/metrics"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/playback"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/pprof"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/recordcleaner"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/rlimit"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/servers/hls"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/servers/rtmp"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/servers/rtsp"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/servers/srt"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/servers/webrtc"
 )
 
 //go:generate go run ./versiongetter
@@ -41,10 +41,10 @@ var version []byte
 
 var defaultConfPaths = []string{
 	"rtsp-simple-server.yml",
-	"mediamtx.yml",
-	"/usr/local/etc/mediamtx.yml",
-	"/usr/etc/mediamtx.yml",
-	"/etc/mediamtx/mediamtx.yml",
+	"FlyInkStream-Engine.yml",
+	"/usr/local/etc/FlyInkStream-Engine.yml",
+	"/usr/etc/FlyInkStream-Engine.yml",
+	"/etc/FlyInkStream-Engine/FlyInkStream-Engine.yml",
 }
 
 var cli struct {
@@ -61,7 +61,7 @@ func atLeastOneRecordDeleteAfter(pathConfs map[string]*conf.Path) bool {
 	return false
 }
 
-// Core is an instance of MediaMTX.
+// Core is an instance of FlyInkStream-Engine.
 type Core struct {
 	ctx             context.Context
 	ctxCancel       func()
@@ -95,12 +95,12 @@ type Core struct {
 // New allocates a Core.
 func New(args []string) (*Core, bool) {
 	parser, err := kong.New(&cli,
-		kong.Description("MediaMTX "+string(version)),
+		kong.Description("FlyInkStream-Engine "+string(version)),
 		kong.UsageOnError(),
 		kong.ValueFormatter(func(value *kong.Value) string {
 			switch value.Name {
 			case "confpath":
-				return "path to a config file. The default is mediamtx.yml."
+				return "path to a config file. The default is FlyInkStream-Engine.yml."
 
 			default:
 				return kong.DefaultHelpValueFormatter(value)
@@ -237,7 +237,7 @@ func (p *Core) createResources(initial bool) error {
 	}
 
 	if initial {
-		p.Log(logger.Info, "MediaMTX %s", version)
+		p.Log(logger.Info, "FlyInkStream-Engine %s", version)
 
 		if p.confPath != "" {
 			a, _ := filepath.Abs(p.confPath)
@@ -952,3 +952,7 @@ func (p *Core) APIConfigSet(conf *conf.Conf) {
 	case <-p.ctx.Done():
 	}
 }
+
+
+
+

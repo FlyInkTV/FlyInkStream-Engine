@@ -3,8 +3,8 @@ package defs
 import (
 	"context"
 
-	"github.com/bluenviron/mediamtx/internal/conf"
-	"github.com/bluenviron/mediamtx/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
 )
 
 // StaticSource is a static source.
@@ -28,3 +28,7 @@ type StaticSourceRunParams struct {
 	Conf           *conf.Path
 	ReloadConf     chan *conf.Path
 }
+
+
+
+

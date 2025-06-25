@@ -3,7 +3,7 @@ package message //nolint:dupl
 import (
 	"fmt"
 
-	"github.com/bluenviron/mediamtx/internal/protocols/rtmp/rawmessage"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/protocols/rtmp/rawmessage"
 )
 
 // SetPeerBandwidth is a set peer bandwidth message.
@@ -42,3 +42,7 @@ func (m *SetPeerBandwidth) marshal() (*rawmessage.Message, error) {
 		Body:          buf,
 	}, nil
 }
+
+
+
+

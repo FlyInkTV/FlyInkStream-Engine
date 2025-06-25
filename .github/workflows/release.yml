@@ -65,13 +65,13 @@ jobs:
             + 'You can verify that binaries have been produced by the workflow by using [GitHub Attestations](https://docs.github.com/en/actions/security-for-github-actions/using-artifact-attestations/using-artifact-attestations-to-establish-provenance-for-builds):\n'
             + `\n`
             + '```\n'
-            + `ls mediamtx_* | xargs -L1 gh attestation verify --repo bluenviron/mediamtx\n`
+            + `ls flyinkstream_* | xargs -L1 gh attestation verify --repo bluenviron/FlyInkStream-Engine\n`
             + '```\n'
             + `\n`
             + 'You can verify the binaries checksum by downloading `checksums.sha256` and running:\n'
             + `\n`
             + '```\n'
-            + `cat checksums.sha256 | grep "$(ls mediamtx_*)" | sha256sum --check\n`
+            + `cat checksums.sha256 | grep "$(ls flyinkstream_*)" | sha256sum --check\n`
             + '```\n'
             + `\n`;
 
@@ -171,3 +171,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./apidocs
+
+
+
+

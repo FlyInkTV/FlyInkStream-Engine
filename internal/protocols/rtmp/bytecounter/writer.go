@@ -34,3 +34,7 @@ func (w *Writer) Count() uint64 {
 func (w *Writer) SetCount(v uint64) {
 	atomic.StoreUint64(&w.count, v)
 }
+
+
+
+

@@ -3,7 +3,7 @@ package rtsp
 import (
 	"github.com/bluenviron/gortsplib/v4/pkg/base"
 	"github.com/bluenviron/gortsplib/v4/pkg/headers"
-	"github.com/bluenviron/mediamtx/internal/auth"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/auth"
 )
 
 // Credentials extracts credentials from a RTSP request.
@@ -21,3 +21,7 @@ func Credentials(rt *base.Request) *auth.Credentials {
 
 	return c
 }
+
+
+
+

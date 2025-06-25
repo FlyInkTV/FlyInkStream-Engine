@@ -5,7 +5,7 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/bluenviron/mediamtx/internal/auth"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/auth"
 	"github.com/stretchr/testify/require"
 )
 
@@ -81,3 +81,7 @@ func TestCredentials(t *testing.T) {
 		}, c)
 	})
 }
+
+
+
+

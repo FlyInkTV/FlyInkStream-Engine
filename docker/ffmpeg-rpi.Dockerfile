@@ -30,4 +30,8 @@ RUN apt update \
 
 COPY --from=binaries /$TARGETPLATFORM /
 
-ENTRYPOINT [ "/mediamtx" ]
+ENTRYPOINT [ "/flyinkstream-engine" ]
+
+
+
+

@@ -29,3 +29,7 @@ func (ls *syslog) Close() error {
 func (ls *syslog) Write(p []byte) (int, error) {
 	return ls.inner.Write(p)
 }
+
+
+
+

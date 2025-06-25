@@ -13,7 +13,7 @@ import (
 
 func buildImage(image string) error {
 	ecmd := exec.Command("docker", "build", filepath.Join("images", image),
-		"-t", "mediamtx-test-"+image)
+		"-t", "FlyInkStream-Engine-test-"+image)
 	ecmd.Stdout = nil
 	ecmd.Stderr = os.Stderr
 	return ecmd.Run()
@@ -28,3 +28,7 @@ func TestBuildImages(t *testing.T) {
 		require.NoError(t, err)
 	}
 }
+
+
+
+

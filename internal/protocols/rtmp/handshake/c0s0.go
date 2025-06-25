@@ -32,3 +32,7 @@ func (c C0S0) Write(w io.Writer) error {
 	_, err := w.Write([]byte{c.Version})
 	return err
 }
+
+
+
+

@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/bluenviron/mediamtx/internal/conf"
-	"github.com/bluenviron/mediamtx/internal/conf/yamlwrapper"
-	"github.com/bluenviron/mediamtx/internal/defs"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf/yamlwrapper"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/defs"
 	"github.com/stretchr/testify/require"
 )
 
@@ -193,3 +193,7 @@ func TestAPIDocs(t *testing.T) {
 		})
 	}
 }
+
+
+
+

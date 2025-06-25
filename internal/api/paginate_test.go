@@ -63,3 +63,7 @@ func FuzzPaginate(f *testing.F) {
 		paginate(&items, str1, str2) //nolint:errcheck
 	})
 }
+
+
+
+

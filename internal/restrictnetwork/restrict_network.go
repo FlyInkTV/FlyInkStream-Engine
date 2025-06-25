@@ -16,3 +16,7 @@ func Restrict(network string, address string) (string, string) {
 
 	return network, address
 }
+
+
+
+

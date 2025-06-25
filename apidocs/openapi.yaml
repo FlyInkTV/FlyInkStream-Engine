@@ -2,8 +2,8 @@ openapi: 3.0.0
 
 info:
   version: 1.0.0
-  title: MediaMTX API
-  description: API of MediaMTX, a server and proxy that supports various protocols.
+  title: flyinkstream-engine API
+  description: API of flyinkstream-engine, a server and proxy that supports various protocols.
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
@@ -2496,3 +2496,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+
+
+
+

@@ -8,13 +8,13 @@ import (
 	"github.com/bluenviron/gohlslib/v2"
 	"github.com/bluenviron/gortsplib/v4/pkg/description"
 
-	"github.com/bluenviron/mediamtx/internal/conf"
-	"github.com/bluenviron/mediamtx/internal/counterdumper"
-	"github.com/bluenviron/mediamtx/internal/defs"
-	"github.com/bluenviron/mediamtx/internal/logger"
-	"github.com/bluenviron/mediamtx/internal/protocols/hls"
-	"github.com/bluenviron/mediamtx/internal/protocols/tls"
-	"github.com/bluenviron/mediamtx/internal/stream"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/counterdumper"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/defs"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/protocols/hls"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/protocols/tls"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/stream"
 )
 
 // Source is a HLS static source.
@@ -134,3 +134,7 @@ func (*Source) APISourceDescribe() defs.APIPathSourceOrReader {
 		ID:   "",
 	}
 }
+
+
+
+

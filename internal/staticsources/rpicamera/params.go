@@ -43,3 +43,7 @@ type params struct {
 	SecondaryFPS      float32
 	SecondaryQuality  uint32
 }
+
+
+
+

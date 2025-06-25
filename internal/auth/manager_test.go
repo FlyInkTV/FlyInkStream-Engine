@@ -11,7 +11,7 @@ import (
 	"time"
 
 	"github.com/MicahParks/jwkset"
-	"github.com/bluenviron/mediamtx/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/stretchr/testify/require"
 )
@@ -334,7 +334,7 @@ func TestAuthJWT(t *testing.T) {
 
 	type customClaims struct {
 		jwt.RegisteredClaims
-		MediaMTXPermissions []conf.AuthInternalUserPermission `json:"my_permission_key"`
+		flyinkstreamPermissions []conf.AuthInternalUserPermission `json:"my_permission_key"`
 	}
 
 	claims := customClaims{
@@ -346,7 +346,7 @@ func TestAuthJWT(t *testing.T) {
 			Subject:   "somebody",
 			ID:        "1",
 		},
-		MediaMTXPermissions: []conf.AuthInternalUserPermission{{
+		flyinkstreamPermissions: []conf.AuthInternalUserPermission{{
 			Action: conf.AuthActionPublish,
 			Path:   "mypath",
 		}},
@@ -415,7 +415,7 @@ func TestAuthJWTAsString(t *testing.T) {
 
 	type customClaims struct {
 		jwt.RegisteredClaims
-		MediaMTXPermissions string `json:"my_permission_key"`
+		flyinkstreamPermissions string `json:"my_permission_key"`
 	}
 
 	enc, err := json.Marshal([]conf.AuthInternalUserPermission{{
@@ -433,7 +433,7 @@ func TestAuthJWTAsString(t *testing.T) {
 			Subject:   "somebody",
 			ID:        "1",
 		},
-		MediaMTXPermissions: string(enc),
+		flyinkstreamPermissions: string(enc),
 	}
 
 	token := jwt.NewWithClaims(jwt.SigningMethodRS256, claims)
@@ -528,7 +528,7 @@ func TestAuthJWTRefresh(t *testing.T) {
 
 		type customClaims struct {
 			jwt.RegisteredClaims
-			MediaMTXPermissions []conf.AuthInternalUserPermission `json:"my_permission_key"`
+			flyinkstreamPermissions []conf.AuthInternalUserPermission `json:"my_permission_key"`
 		}
 
 		claims := customClaims{
@@ -540,7 +540,7 @@ func TestAuthJWTRefresh(t *testing.T) {
 				Subject:   "somebody",
 				ID:        "1",
 			},
-			MediaMTXPermissions: []conf.AuthInternalUserPermission{{
+			flyinkstreamPermissions: []conf.AuthInternalUserPermission{{
 				Action: conf.AuthActionPublish,
 				Path:   "mypath",
 			}},
@@ -566,3 +566,7 @@ func TestAuthJWTRefresh(t *testing.T) {
 		m.RefreshJWTJWKS()
 	}
 }
+
+
+
+

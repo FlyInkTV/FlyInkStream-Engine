@@ -51,3 +51,7 @@ func (o Object) GetFloat64(key string) (float64, bool) {
 
 	return v2, ok2
 }
+
+
+
+

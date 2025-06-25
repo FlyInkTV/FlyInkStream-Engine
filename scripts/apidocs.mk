@@ -8,3 +8,7 @@ apidocs:
 	echo "$$DOCKERFILE_APIDOCS_GEN" | docker build . -f - -t temp
 	docker run --rm -v "$(shell pwd)/apidocs:/s" -w /s temp \
 	sh -c "redoc-cli bundle openapi.yaml"
+
+
+
+

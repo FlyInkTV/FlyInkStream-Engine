@@ -1,8 +1,8 @@
 package core
 
 import (
-	"github.com/bluenviron/mediamtx/internal/defs"
-	"github.com/bluenviron/mediamtx/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/defs"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
 )
 
 // sourceRedirect is a source that redirects to another one.
@@ -18,3 +18,7 @@ func (*sourceRedirect) APISourceDescribe() defs.APIPathSourceOrReader {
 		ID:   "",
 	}
 }
+
+
+
+

@@ -13,9 +13,9 @@ import (
 	mcmpegts "github.com/bluenviron/mediacommon/v2/pkg/formats/mpegts"
 	srt "github.com/datarhei/gosrt"
 
-	"github.com/bluenviron/mediamtx/internal/logger"
-	"github.com/bluenviron/mediamtx/internal/stream"
-	"github.com/bluenviron/mediamtx/internal/unit"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/stream"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/unit"
 )
 
 func multiplyAndDivide(v, m, d int64) int64 {
@@ -24,7 +24,7 @@ func multiplyAndDivide(v, m, d int64) int64 {
 	return (secs*m + dec*m/d)
 }
 
-// FromStream maps a MediaMTX stream to a MPEG-TS writer.
+// FromStream maps a FlyInkStream-Engine stream to a MPEG-TS writer.
 func FromStream(
 	strea *stream.Stream,
 	reader stream.Reader,
@@ -336,3 +336,7 @@ func FromStream(
 
 	return nil
 }
+
+
+
+

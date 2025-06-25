@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/bluenviron/mediamtx/internal/conf"
-	"github.com/bluenviron/mediamtx/internal/test"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/test"
 	"github.com/stretchr/testify/require"
 )
 
@@ -17,7 +17,7 @@ func TestCleaner(t *testing.T) {
 		return time.Date(2009, 5, 20, 22, 15, 25, 427000, time.Local)
 	}
 
-	dir, err := os.MkdirTemp("", "mediamtx-cleaner")
+	dir, err := os.MkdirTemp("", "FlyInkStream-Engine-cleaner")
 	require.NoError(t, err)
 	defer os.RemoveAll(dir)
 
@@ -61,7 +61,7 @@ func TestCleanerMultipleEntriesSamePath(t *testing.T) {
 		return time.Date(2009, 5, 20, 22, 15, 25, 427000, time.Local)
 	}
 
-	dir, err := os.MkdirTemp("", "mediamtx-cleaner")
+	dir, err := os.MkdirTemp("", "FlyInkStream-Engine-cleaner")
 	require.NoError(t, err)
 	defer os.RemoveAll(dir)
 
@@ -108,3 +108,7 @@ func TestCleanerMultipleEntriesSamePath(t *testing.T) {
 	_, err = os.Stat(filepath.Join(dir, "path2", "2009-05-19_22-15-25-000427.mp4"))
 	require.NoError(t, err)
 }
+
+
+
+

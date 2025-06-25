@@ -11,10 +11,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/bluenviron/mediamtx/internal/auth"
-	"github.com/bluenviron/mediamtx/internal/conf"
-	"github.com/bluenviron/mediamtx/internal/logger"
-	"github.com/bluenviron/mediamtx/internal/test"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/auth"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/test"
 	"github.com/stretchr/testify/require"
 )
 
@@ -554,7 +554,7 @@ func TestConfigPathsDelete(t *testing.T) {
 }
 
 func TestRecordingsList(t *testing.T) {
-	dir, err := os.MkdirTemp("", "mediamtx-playback")
+	dir, err := os.MkdirTemp("", "FlyInkStream-Engine-playback")
 	require.NoError(t, err)
 	defer os.RemoveAll(dir)
 
@@ -624,7 +624,7 @@ func TestRecordingsList(t *testing.T) {
 }
 
 func TestRecordingsGet(t *testing.T) {
-	dir, err := os.MkdirTemp("", "mediamtx-playback")
+	dir, err := os.MkdirTemp("", "FlyInkStream-Engine-playback")
 	require.NoError(t, err)
 	defer os.RemoveAll(dir)
 
@@ -673,7 +673,7 @@ func TestRecordingsGet(t *testing.T) {
 }
 
 func TestRecordingsDeleteSegment(t *testing.T) {
-	dir, err := os.MkdirTemp("", "mediamtx-playback")
+	dir, err := os.MkdirTemp("", "FlyInkStream-Engine-playback")
 	require.NoError(t, err)
 	defer os.RemoveAll(dir)
 
@@ -757,3 +757,7 @@ func TestAuthJWKSRefresh(t *testing.T) {
 
 	require.True(t, ok)
 }
+
+
+
+

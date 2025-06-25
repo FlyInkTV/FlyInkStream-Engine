@@ -296,3 +296,7 @@ func DoServer(rw io.ReadWriter, strict bool) ([]byte, []byte, error) {
 	}
 	return nil, nil, doServerPlain(rw, strict)
 }
+
+
+
+

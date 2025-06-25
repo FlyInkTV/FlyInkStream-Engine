@@ -19,3 +19,7 @@ lint-apidocs:
 	sh -c "openapi lint openapi.yaml"
 
 lint: lint-golangci lint-mod-tidy lint-apidocs
+
+
+
+

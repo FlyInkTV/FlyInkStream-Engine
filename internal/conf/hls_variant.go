@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/bluenviron/gohlslib/v2"
-	"github.com/bluenviron/mediamtx/internal/conf/jsonwrapper"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf/jsonwrapper"
 )
 
 // HLSVariant is the hlsVariant parameter.
@@ -57,3 +57,7 @@ func (d *HLSVariant) UnmarshalJSON(b []byte) error {
 func (d *HLSVariant) UnmarshalEnv(_ string, v string) error {
 	return d.UnmarshalJSON([]byte(`"` + v + `"`))
 }
+
+
+
+

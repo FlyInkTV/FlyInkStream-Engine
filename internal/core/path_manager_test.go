@@ -14,7 +14,7 @@ import (
 	"github.com/pion/rtp"
 	"github.com/stretchr/testify/require"
 
-	"github.com/bluenviron/mediamtx/internal/test"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/test"
 )
 
 func TestPathAutoDeletion(t *testing.T) {
@@ -91,7 +91,7 @@ func TestPathAutoDeletion(t *testing.T) {
 }
 
 func TestPathConfigurationHotReload(t *testing.T) {
-	// Start MediaMTX with basic configuration
+	// Start FlyInkStream-Engine with basic configuration
 	p, ok := newInstance("api: yes\n" +
 		"paths:\n" +
 		"  all:\n" +
@@ -183,3 +183,7 @@ func TestPathConfigurationHotReload(t *testing.T) {
 	require.Equal(t, "undefined_stream", pathData.Name)
 	require.Equal(t, "all", pathData.ConfName)
 }
+
+
+
+

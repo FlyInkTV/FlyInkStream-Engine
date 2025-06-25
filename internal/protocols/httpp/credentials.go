@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/bluenviron/mediamtx/internal/auth"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/auth"
 )
 
 // Credentials extracts credentials from a HTTP request.
@@ -31,3 +31,7 @@ func Credentials(h *http.Request) *auth.Credentials {
 
 	return c
 }
+
+
+
+

@@ -8,7 +8,7 @@ import (
 
 	"github.com/bluenviron/gortsplib/v4"
 	"github.com/bluenviron/gortsplib/v4/pkg/description"
-	"github.com/bluenviron/mediamtx/internal/test"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/test"
 	"github.com/stretchr/testify/require"
 )
 
@@ -35,7 +35,7 @@ func TestCoreErrors(t *testing.T) {
 			"logger",
 			"logDestinations: [file]\n" +
 				"logFile: /nonexisting/nonexist\n" +
-				"sysLogPrefix: /mediamtx\n",
+				"sysLogPrefix: /FlyInkStream-Engine\n",
 		},
 		{
 			"metrics",
@@ -132,3 +132,7 @@ func TestCoreHotReloading(t *testing.T) {
 		defer conn.Close()
 	}()
 }
+
+
+
+

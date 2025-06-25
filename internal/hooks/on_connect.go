@@ -3,9 +3,9 @@ package hooks
 import (
 	"net"
 
-	"github.com/bluenviron/mediamtx/internal/defs"
-	"github.com/bluenviron/mediamtx/internal/externalcmd"
-	"github.com/bluenviron/mediamtx/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/defs"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/externalcmd"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
 )
 
 // OnConnectParams are the parameters of OnConnect.
@@ -63,3 +63,7 @@ func OnConnect(params OnConnectParams) func() {
 		}
 	}
 }
+
+
+
+

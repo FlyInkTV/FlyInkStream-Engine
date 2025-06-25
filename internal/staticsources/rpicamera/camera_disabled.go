@@ -26,3 +26,7 @@ func (c *camera) reloadParams(_ params) {
 func (c *camera) wait() error {
 	return nil
 }
+
+
+
+

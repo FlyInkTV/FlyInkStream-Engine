@@ -10,10 +10,10 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/bluenviron/mediamtx/internal/protocols/rtmp/amf0"
-	"github.com/bluenviron/mediamtx/internal/protocols/rtmp/bytecounter"
-	"github.com/bluenviron/mediamtx/internal/protocols/rtmp/handshake"
-	"github.com/bluenviron/mediamtx/internal/protocols/rtmp/message"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/protocols/rtmp/amf0"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/protocols/rtmp/bytecounter"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/protocols/rtmp/handshake"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/protocols/rtmp/message"
 	"github.com/google/uuid"
 )
 
@@ -490,3 +490,7 @@ func (c *Client) Read() (message.Message, error) {
 func (c *Client) Write(msg message.Message) error {
 	return c.mrw.Write(msg)
 }
+
+
+
+

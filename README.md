@@ -1,15 +1,15 @@
 <h1 align="center">
-  <img src="logo.png" alt="MediaMTX / rtsp-simple-server">
+  <img src="logo.png" alt="FlyInkStream-Engine / rtsp-simple-server">
 
   <br>
   <br>
 
-  [![Test](https://github.com/bluenviron/mediamtx/actions/workflows/code_test.yml/badge.svg)](https://github.com/bluenviron/mediamtx/actions/workflows/code_test.yml)
-  [![Lint](https://github.com/bluenviron/mediamtx/actions/workflows/code_lint.yml/badge.svg)](https://github.com/bluenviron/mediamtx/actions/workflows/code_lint.yml)
-  [![CodeCov](https://codecov.io/gh/bluenviron/mediamtx/branch/main/graph/badge.svg)](https://app.codecov.io/gh/bluenviron/mediamtx/tree/main)
-  [![Release](https://img.shields.io/github/v/release/bluenviron/mediamtx)](https://github.com/bluenviron/mediamtx/releases)
-  [![Docker Hub](https://img.shields.io/badge/docker-bluenviron/mediamtx-blue)](https://hub.docker.com/r/bluenviron/mediamtx)
-  [![API Documentation](https://img.shields.io/badge/api-documentation-blue)](https://bluenviron.github.io/mediamtx)
+  [![Test](https://github.com/bluenviron/FlyInkStream-Engine/actions/workflows/code_test.yml/badge.svg)](https://github.com/bluenviron/FlyInkStream-Engine/actions/workflows/code_test.yml)
+  [![Lint](https://github.com/bluenviron/FlyInkStream-Engine/actions/workflows/code_lint.yml/badge.svg)](https://github.com/bluenviron/FlyInkStream-Engine/actions/workflows/code_lint.yml)
+  [![CodeCov](https://codecov.io/gh/bluenviron/FlyInkStream-Engine/branch/main/graph/badge.svg)](https://app.codecov.io/gh/bluenviron/FlyInkStream-Engine/tree/main)
+  [![Release](https://img.shields.io/github/v/release/bluenviron/FlyInkStream-Engine)](https://github.com/bluenviron/FlyInkStream-Engine/releases)
+  [![Docker Hub](https://img.shields.io/badge/docker-bluenviron/FlyInkStream-Engine-blue)](https://hub.docker.com/r/bluenviron/FlyInkStream-Engine)
+  [![API Documentation](https://img.shields.io/badge/api-documentation-blue)](https://bluenviron.github.io/FlyInkStream-Engine)
 </h1>
 
 <br>
@@ -71,7 +71,7 @@ Live streams be recorded and played back with:
 
 **Origins of Fly Ink Stream Engine™**
 
-_Fly Ink Stream Engine™_ is a branded, optimized fork developed by _Fly Ink Tattoo Parlor LLC._ It builds upon the open-source project originally named _rtsp-simple-server_, which was later rebranded as _MediaMTX_ by its creator, _aler9_.
+_Fly Ink Stream Engine™_ is a branded, optimized fork developed by _Fly Ink Tattoo Parlor LLC._ It builds upon the open-source project originally named _rtsp-simple-server_, which was later rebranded as _flyinkstream_ by its creator, _aler9_.
 
 The original project began as a focused RTSP server but evolved into a versatile, multi-protocol media server and proxy supporting RTMP, SRT, WebRTC, LL-HLS, and more.
 
@@ -178,12 +178,12 @@ There are several installation methods available: standalone binary, Docker imag
 
 ### Standalone binary
 
-1. Download and extract a standalone binary from the [release page](https://github.com/bluenviron/mediamtx/releases) that corresponds to your operating system and architecture.
+1. Download and extract a standalone binary from the [release page](https://github.com/bluenviron/FlyInkStream-Engine/releases) that corresponds to your operating system and architecture.
 
 2. Start the server:
 
    ```sh
-   ./mediamtx
+   ./FlyInkStream-Engine
    ```
 
 ### Docker image
@@ -191,17 +191,17 @@ There are several installation methods available: standalone binary, Docker imag
 Download and launch the image:
 
 ```
-docker run --rm -it --network=host bluenviron/mediamtx:latest
+docker run --rm -it --network=host bluenviron/FlyInkStream-Engine:latest
 ```
 
 Available images:
 
 |name|FFmpeg included|RPI Camera support|
 |----|---------------|------------------|
-|bluenviron/mediamtx:latest|:x:|:x:|
-|bluenviron/mediamtx:latest-ffmpeg|:heavy_check_mark:|:x:|
-|bluenviron/mediamtx:latest-rpi|:x:|:heavy_check_mark:|
-|bluenviron/mediamtx:latest-ffmpeg-rpi|:heavy_check_mark:|:heavy_check_mark:|
+|bluenviron/FlyInkStream-Engine:latest|:x:|:x:|
+|bluenviron/FlyInkStream-Engine:latest-ffmpeg|:heavy_check_mark:|:x:|
+|bluenviron/FlyInkStream-Engine:latest-rpi|:x:|:heavy_check_mark:|
+|bluenviron/FlyInkStream-Engine:latest-ffmpeg-rpi|:heavy_check_mark:|:heavy_check_mark:|
 
 The `--network=host` flag is mandatory for RTSP to work, since Docker can change the source port of UDP packets for routing reasons, and this doesn't allow the server to identify the senders of the packets.
 
@@ -217,7 +217,7 @@ docker run --rm -it \
 -p 8889:8889 \
 -p 8890:8890/udp \
 -p 8189:8189/udp \
-bluenviron/mediamtx
+bluenviron/FlyInkStream-Engine
 ```
 
 ### Arch Linux package
@@ -225,8 +225,8 @@ bluenviron/mediamtx
 If you are running the Arch Linux distribution, run:
 
 ```sh
-git clone https://aur.archlinux.org/mediamtx.git
-cd mediamtx
+git clone https://aur.archlinux.org/FlyInkStream-Engine.git
+cd FlyInkStream-Engine
 makepkg -si
 ```
 
@@ -564,7 +564,7 @@ The resulting stream is available in path `/mystream`.
 This web page can be embedded into another web page by using an iframe:
 
 ```html
-<iframe src="http://mediamtx-ip:8889/mystream/publish" scrolling="no"></iframe>
+<iframe src="http://FlyInkStream-Engine-ip:8889/mystream/publish" scrolling="no"></iframe>
 ```
 
 For more advanced setups, you can create and serve a custom web page by starting from the [source code of the WebRTC publish page](internal/servers/webrtc/publish_index.html). In particular, there's a ready-to-use, standalone JavaScript class for publishing streams with WebRTC, available in [publisher.js](internal/servers/webrtc/publisher.js).
@@ -573,7 +573,7 @@ For more advanced setups, you can create and serve a custom web page by starting
 
 #### Generic webcam
 
-If the operating system is Linux-based, edit `mediamtx.yml` and replace everything inside section `paths` with the following content:
+If the operating system is Linux-based, edit `FlyInkStream-Engine.yml` and replace everything inside section `paths` with the following content:
 
 ```yml
 paths:
@@ -616,7 +616,7 @@ If you want to run the standard (non-Docker) version of the server:
 
 1. Download the server executable. If you're using 64-bit version of the operative system, make sure to pick the `arm64` variant.
 
-2. Edit `mediamtx.yml` and replace everything inside section `paths` with the following content:
+2. Edit `FlyInkStream-Engine.yml` and replace everything inside section `paths` with the following content:
 
    ```yml
    paths:
@@ -635,7 +635,7 @@ docker run --rm -it \
 --tmpfs /dev/shm:exec \
 -v /run/udev:/run/udev:ro \
 -e MTX_PATHS_CAM_SOURCE=rpiCamera \
-bluenviron/mediamtx:latest-rpi
+bluenviron/FlyInkStream-Engine:latest-rpi
 ```
 
 Be aware that precompiled binaries and Docker images are not compatible with cameras that require a custom `libcamera` (like some ArduCam products), since they come with a bundled `libcamera`. If you want to use a custom one, you can [compile from source](#custom-libcamera).
@@ -650,7 +650,7 @@ paths:
     rpiCameraHeight: 1080
 ```
 
-All available parameters are listed in the [sample configuration file](/mediamtx.yml).
+All available parameters are listed in the [sample configuration file](/FlyInkStream-Engine.yml).
 
 ##### Adding audio
 
@@ -896,7 +896,7 @@ ffmpeg -re -f lavfi -i testsrc=size=1280x720:rate=30 \
 -f mpegts udp://238.0.0.1:1234?pkt_size=1316
 ```
 
-Edit `mediamtx.yml` and replace everything inside section `paths` with the following content:
+Edit `FlyInkStream-Engine.yml` and replace everything inside section `paths` with the following content:
 
 ```yml
 paths:
@@ -1168,7 +1168,7 @@ http://localhost:8889/mystream
 This web page can be embedded into another web page by using an iframe:
 
 ```html
-<iframe src="http://mediamtx-ip:8889/mystream" scrolling="no"></iframe>
+<iframe src="http://FlyInkStream-Engine-ip:8889/mystream" scrolling="no"></iframe>
 ```
 
 For more advanced setups, you can create and serve a custom web page by starting from the [source code of the WebRTC read page](internal/servers/webrtc/read_index.html). In particular, there's a ready-to-use, standalone JavaScript class for reading streams with WebRTC, available in [reader.js](internal/servers/webrtc/reader.js).
@@ -1182,7 +1182,7 @@ http://localhost:8888/mystream
 This web page can be embedded into another web page by using an iframe:
 
 ```html
-<iframe src="http://mediamtx-ip:8888/mystream" scrolling="no"></iframe>
+<iframe src="http://FlyInkStream-Engine-ip:8888/mystream" scrolling="no"></iframe>
 ```
 
 For more advanced setups, you can create and serve a custom web page by starting from the [source code of the HLS read page](internal/servers/hls/index.html).
@@ -1265,13 +1265,13 @@ Known clients that can read with RTMP are [FFmpeg](#ffmpeg-1), [GStreamer](#gstr
 
 #### HLS
 
-HLS is a protocol that works by splitting streams into segments, and by serving these segments and a playlist with the HTTP protocol. You can use _MediaMTX_ to generate a HLS stream, that is accessible through a web page:
+HLS is a protocol that works by splitting streams into segments, and by serving these segments and a playlist with the HTTP protocol. You can use _flyinkstream_ to generate a HLS stream, that is accessible through a web page:
 
 ```
 http://localhost:8888/mystream
 ```
 
-and can also be accessed without using the browsers, by software that supports the HLS protocol (for instance VLC or _MediaMTX_ itself) by using this URL:
+and can also be accessed without using the browsers, by software that supports the HLS protocol (for instance VLC or _flyinkstream_ itself) by using this URL:
 
 ```
 http://localhost:8888/mystream/index.m3u8
@@ -1334,17 +1334,17 @@ To decrease the latency, you can:
 
 ### Configuration
 
-All the configuration parameters are listed and commented in the [configuration file](mediamtx.yml).
+All the configuration parameters are listed and commented in the [configuration file](FlyInkStream-Engine.yml).
 
 There are 3 ways to change the configuration:
 
-1. By editing the `mediamtx.yml` file, that is
+1. By editing the `FlyInkStream-Engine.yml` file, that is
 
    * included into the release bundle
-   * available in the root folder of the Docker image (`/mediamtx.yml`); it can be overridden in this way:
+   * available in the root folder of the Docker image (`/FlyInkStream-Engine.yml`); it can be overridden in this way:
 
      ```
-     docker run --rm -it --network=host -v "$PWD/mediamtx.yml:/mediamtx.yml:ro" bluenviron/mediamtx
+     docker run --rm -it --network=host -v "$PWD/FlyInkStream-Engine.yml:/FlyInkStream-Engine.yml:ro" bluenviron/FlyInkStream-Engine
      ```
 
    The configuration can be changed dynamically when the server is running (hot reloading) by writing to the configuration file. Changes are detected and applied without disconnecting existing clients, whenever it's possible.
@@ -1352,7 +1352,7 @@ There are 3 ways to change the configuration:
 2. By overriding configuration parameters with environment variables, in the format `MTX_PARAMNAME`, where `PARAMNAME` is the uppercase name of a parameter. For instance, the `rtspAddress` parameter can be overridden in the following way:
 
    ```
-   MTX_RTSPADDRESS="127.0.0.1:8554" ./mediamtx
+   MTX_RTSPADDRESS="127.0.0.1:8554" ./FlyInkStream-Engine
    ```
 
    Parameters that have array as value can be overridden by setting a comma-separated list. For example:
@@ -1364,13 +1364,13 @@ There are 3 ways to change the configuration:
    Parameters in maps can be overridden by using underscores, in the following way:
 
    ```
-   MTX_PATHS_TEST_SOURCE=rtsp://myurl ./mediamtx
+   MTX_PATHS_TEST_SOURCE=rtsp://myurl ./FlyInkStream-Engine
    ```
 
    This method is particularly useful when using Docker; any configuration parameter can be changed by passing environment variables with the `-e` flag:
 
    ```
-   docker run --rm -it --network=host -e MTX_PATHS_TEST_SOURCE=rtsp://myurl bluenviron/mediamtx
+   docker run --rm -it --network=host -e MTX_PATHS_TEST_SOURCE=rtsp://myurl bluenviron/FlyInkStream-Engine
    ```
 
 3. By using the [Control API](#control-api).
@@ -1503,14 +1503,14 @@ Authentication can be delegated to an external identity server, that is capable 
 ```yml
 authMethod: jwt
 authJWTJWKS: http://my_identity_server/jwks_endpoint
-authJWTClaimKey: mediamtx_permissions
+authJWTClaimKey: flyinkstream_permissions
 ```
 
 The JWT is expected to contain a claim, with a list of permissions in the same format as the one of user permissions:
 
 ```json
 {
- "mediamtx_permissions": [
+ "flyinkstream_permissions": [
     {
       "action": "publish",
       "path": ""
@@ -1539,7 +1539,7 @@ These are the recommended methods for each client:
 |FFmpeg|RTMP|unsupported|Passwords and query parameters are currently truncated to 1024 characters by FFmpeg, so it's impossible to use FFMPEG+RTMP+JWT|
 |GStreamer|RTSP|Password||
 |GStreamer|RTMP|Query parameter||
-|any|SRT|unsupported|SRT truncates passwords and query parameters to 512 characters, so it's impossible to use SRT+JWT. See [#3430](https://github.com/bluenviron/mediamtx/issues/3430)|
+|any|SRT|unsupported|SRT truncates passwords and query parameters to 512 characters, so it's impossible to use SRT+JWT. See [#3430](https://github.com/bluenviron/FlyInkStream-Engine/issues/3430)|
 
 Here's a tutorial on how to setup the [Keycloak identity server](https://www.keycloak.org/) in order to provide JWTs:
 
@@ -1549,57 +1549,57 @@ Here's a tutorial on how to setup the [Keycloak identity server](https://www.key
    docker run --name=keycloak -p 8080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:23.0.7 start-dev
    ```
 
-2. Open the Keycloak administration console on http://localhost:8080, click on _master_ in the top left corner, _create realm_, set realm name to `mediamtx`, Save
+2. Open the Keycloak administration console on http://localhost:8080, click on _master_ in the top left corner, _create realm_, set realm name to `FlyInkStream-Engine`, Save
 
-3. Open page _Client scopes_, _create client scope_, set name to `mediamtx`, Save
+3. Open page _Client scopes_, _create client scope_, set name to `FlyInkStream-Engine`, Save
 
 4. Open tab _Mappers_, _Configure a new Mapper_, _User Attribute_
 
-   * Name: `mediamtx_permissions`
-   * User Attribute: `mediamtx_permissions`
-   * Token Claim Name: `mediamtx_permissions`
+   * Name: `flyinkstream_permissions`
+   * User Attribute: `flyinkstream_permissions`
+   * Token Claim Name: `flyinkstream_permissions`
    * Claim JSON Type: `JSON`
    * Multivalued: `On`
 
    Save
 
-5. Open page _Clients_, _Create client_, set Client ID to `mediamtx`, Next, Client authentication `On`, Next, Save
+5. Open page _Clients_, _Create client_, set Client ID to `FlyInkStream-Engine`, Next, Client authentication `On`, Next, Save
 
 6. Open tab _Credentials_, copy client secret somewhere
 
-7. Open tab _Client scopes_, _Add client scope_, Select `mediamtx`, Add, Default
+7. Open tab _Client scopes_, _Add client scope_, Select `FlyInkStream-Engine`, Add, Default
 
 8. Open page _Users_, _Add user_, Username `testuser`, Tab credentials, _Set password_, pick a password, Save
 
 9. Open tab _Attributes_, _Add an attribute_
 
-   * Key: `mediamtx_permissions`
+   * Key: `flyinkstream_permissions`
    * Value: `{"action":"publish", "path": ""}`
 
-   You can add as many attributes with key `mediamtx_permissions` as you want, each with a single permission in it
+   You can add as many attributes with key `flyinkstream_permissions` as you want, each with a single permission in it
 
-10. In MediaMTX, use the following URL:
+10. In FlyInkStream-Engine, use the following URL:
 
     ```yml
-    authJWTJWKS: http://localhost:8080/realms/mediamtx/protocol/openid-connect/certs
+    authJWTJWKS: http://localhost:8080/realms/FlyInkStream-Engine/protocol/openid-connect/certs
     ```
 
 11. Perform authentication on Keycloak:
 
     ```
     curl \
-    -d "client_id=mediamtx" \
+    -d "client_id=FlyInkStream-Engine" \
     -d "client_secret=$CLIENT_SECRET" \
     -d "username=$USER" \
     -d "password=$PASS" \
     -d "grant_type=password" \
-    http://localhost:8080/realms/mediamtx/protocol/openid-connect/token
+    http://localhost:8080/realms/FlyInkStream-Engine/protocol/openid-connect/token
     ```
 
     The JWT is inside the `access_token` key of the response:
 
     ```json
-    {"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIyNzVjX3ptOVlOdHQ0TkhwWVk4Und6ZndUclVGSzRBRmQwY3lsM2wtY3pzIn0.eyJleHAiOjE3MDk1NTUwOTIsImlhdCI6MTcwOTU1NDc5MiwianRpIjoiMzE3ZTQ1NGUtNzczMi00OTM1LWExNzAtOTNhYzQ2ODhhYWIxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9tZWRpYW10eCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI2NTBhZDA5Zi03MDgxLTQyNGItODI4Ni0xM2I3YTA3ZDI0MWEiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJtZWRpYW10eCIsInNlc3Npb25fc3RhdGUiOiJjYzJkNDhjYy1kMmU5LTQ0YjAtODkzZS0wYTdhNjJiZDI1YmQiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1tZWRpYW10eCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoibWVkaWFtdHggcHJvZmlsZSBlbWFpbCIsInNpZCI6ImNjMmQ0OGNjLWQyZTktNDRiMC04OTNlLTBhN2E2MmJkMjViZCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibWVkaWFtdHhfcGVybWlzc2lvbnMiOlt7ImFjdGlvbiI6InB1Ymxpc2giLCJwYXRocyI6ImFsbCJ9XSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGVzdHVzZXIifQ.Gevz7rf1qHqFg7cqtSfSP31v_NS0VH7MYfwAdra1t6Yt5rTr9vJzqUeGfjYLQWR3fr4XC58DrPOhNnILCpo7jWRdimCnbPmuuCJ0AYM-Aoi3PAsWZNxgmtopq24_JokbFArY9Y1wSGFvF8puU64lt1jyOOyxf2M4cBHCs_EarCKOwuQmEZxSf8Z-QV9nlfkoTUszDCQTiKyeIkLRHL2Iy7Fw7_T3UI7sxJjVIt0c6HCNJhBBazGsYzmcSQ_GrmhbUteMTg00o6FicqkMBe99uZFnx9wIBm_QbO9hbAkkzF923I-DTAQrFLxT08ESMepDwmzFrmnwWYBLE3u8zuUlCA","expires_in":300,"refresh_expires_in":1800,"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3OTI3Zjg4Zi05YWM4LTRlNmEtYWE1OC1kZmY0MDQzZDRhNGUifQ.eyJleHAiOjE3MDk1NTY1OTIsImlhdCI6MTcwOTU1NDc5MiwianRpIjoiMGVhZWFhMWItYzNhMC00M2YxLWJkZjAtZjI2NTRiODlkOTE3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9tZWRpYW10eCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvbWVkaWFtdHgiLCJzdWIiOiI2NTBhZDA5Zi03MDgxLTQyNGItODI4Ni0xM2I3YTA3ZDI0MWEiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoibWVkaWFtdHgiLCJzZXNzaW9uX3N0YXRlIjoiY2MyZDQ4Y2MtZDJlOS00NGIwLTg5M2UtMGE3YTYyYmQyNWJkIiwic2NvcGUiOiJtZWRpYW10eCBwcm9maWxlIGVtYWlsIiwic2lkIjoiY2MyZDQ4Y2MtZDJlOS00NGIwLTg5M2UtMGE3YTYyYmQyNWJkIn0.yuXV8_JU0TQLuosNdp5xlYMjn7eO5Xq-PusdHzE7bsQ","token_type":"Bearer","not-before-policy":0,"session_state":"cc2d48cc-d2e9-44b0-893e-0a7a62bd25bd","scope":"mediamtx profile email"}
+    {"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIyNzVjX3ptOVlOdHQ0TkhwWVk4Und6ZndUclVGSzRBRmQwY3lsM2wtY3pzIn0.eyJleHAiOjE3MDk1NTUwOTIsImlhdCI6MTcwOTU1NDc5MiwianRpIjoiMzE3ZTQ1NGUtNzczMi00OTM1LWExNzAtOTNhYzQ2ODhhYWIxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9tZWRpYW10eCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI2NTBhZDA5Zi03MDgxLTQyNGItODI4Ni0xM2I3YTA3ZDI0MWEiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJtZWRpYW10eCIsInNlc3Npb25fc3RhdGUiOiJjYzJkNDhjYy1kMmU5LTQ0YjAtODkzZS0wYTdhNjJiZDI1YmQiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1tZWRpYW10eCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoibWVkaWFtdHggcHJvZmlsZSBlbWFpbCIsInNpZCI6ImNjMmQ0OGNjLWQyZTktNDRiMC04OTNlLTBhN2E2MmJkMjViZCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibWVkaWFtdHhfcGVybWlzc2lvbnMiOlt7ImFjdGlvbiI6InB1Ymxpc2giLCJwYXRocyI6ImFsbCJ9XSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGVzdHVzZXIifQ.Gevz7rf1qHqFg7cqtSfSP31v_NS0VH7MYfwAdra1t6Yt5rTr9vJzqUeGfjYLQWR3fr4XC58DrPOhNnILCpo7jWRdimCnbPmuuCJ0AYM-Aoi3PAsWZNxgmtopq24_JokbFArY9Y1wSGFvF8puU64lt1jyOOyxf2M4cBHCs_EarCKOwuQmEZxSf8Z-QV9nlfkoTUszDCQTiKyeIkLRHL2Iy7Fw7_T3UI7sxJjVIt0c6HCNJhBBazGsYzmcSQ_GrmhbUteMTg00o6FicqkMBe99uZFnx9wIBm_QbO9hbAkkzF923I-DTAQrFLxT08ESMepDwmzFrmnwWYBLE3u8zuUlCA","expires_in":300,"refresh_expires_in":1800,"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3OTI3Zjg4Zi05YWM4LTRlNmEtYWE1OC1kZmY0MDQzZDRhNGUifQ.eyJleHAiOjE3MDk1NTY1OTIsImlhdCI6MTcwOTU1NDc5MiwianRpIjoiMGVhZWFhMWItYzNhMC00M2YxLWJkZjAtZjI2NTRiODlkOTE3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9tZWRpYW10eCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvbWVkaWFtdHgiLCJzdWIiOiI2NTBhZDA5Zi03MDgxLTQyNGItODI4Ni0xM2I3YTA3ZDI0MWEiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoibWVkaWFtdHgiLCJzZXNzaW9uX3N0YXRlIjoiY2MyZDQ4Y2MtZDJlOS00NGIwLTg5M2UtMGE3YTYyYmQyNWJkIiwic2NvcGUiOiJtZWRpYW10eCBwcm9maWxlIGVtYWlsIiwic2lkIjoiY2MyZDQ4Y2MtZDJlOS00NGIwLTg5M2UtMGE3YTYyYmQyNWJkIn0.yuXV8_JU0TQLuosNdp5xlYMjn7eO5Xq-PusdHzE7bsQ","token_type":"Bearer","not-before-policy":0,"session_state":"cc2d48cc-d2e9-44b0-893e-0a7a62bd25bd","scope":"FlyInkStream-Engine profile email"}
     ```
 
 ### Encrypt the configuration
@@ -1609,12 +1609,12 @@ The configuration file can be entirely encrypted for security purposes by using 
 After performing the encryption, put the base64-encoded result into the configuration file, and launch the server with the `MTX_CONFKEY` variable:
 
 ```
-MTX_CONFKEY=mykey ./mediamtx
+MTX_CONFKEY=mykey ./FlyInkStream-Engine
 ```
 
 ### Remuxing, re-encoding, compression
 
-To change the format, codec or compression of a stream, use _FFmpeg_ or _GStreamer_ together with _MediaMTX_. For instance, to re-encode an existing stream, that is available in the `/original` path, and publish the resulting stream in the `/compressed` path, edit `mediamtx.yml` and replace everything inside section `paths` with the following content:
+To change the format, codec or compression of a stream, use _FFmpeg_ or _GStreamer_ together with _flyinkstream_. For instance, to re-encode an existing stream, that is available in the `/original` path, and publish the resulting stream in the `/compressed` path, edit `FlyInkStream-Engine.yml` and replace everything inside section `paths` with the following content:
 
 ```yml
 paths:
@@ -1642,7 +1642,7 @@ pathDefaults:
   recordPath: ./recordings/%path/%Y-%m-%d_%H-%M-%S-%f
 ```
 
-All available recording parameters are listed in the [sample configuration file](/mediamtx.yml).
+All available recording parameters are listed in the [sample configuration file](/FlyInkStream-Engine.yml).
 
 Be aware that not all codecs can be saved with all formats, as described in the compatibility matrix at the beginning of the README.
 
@@ -1757,7 +1757,7 @@ pathDefaults:
 
 ### Proxy requests to other servers
 
-The server allows to proxy incoming requests to other servers or cameras. This is useful to expose servers or cameras behind a NAT. Edit `mediamtx.yml` and replace everything inside section `paths` with the following content:
+The server allows to proxy incoming requests to other servers or cameras. This is useful to expose servers or cameras behind a NAT. Edit `FlyInkStream-Engine.yml` and replace everything inside section `paths` with the following content:
 
 ```yml
 paths:
@@ -1772,7 +1772,7 @@ All requests addressed to `rtsp://server:8854/proxy_a` will be forwarded to `rts
 
 ### On-demand publishing
 
-Edit `mediamtx.yml` and replace everything inside section `paths` with the following content:
+Edit `FlyInkStream-Engine.yml` and replace everything inside section `paths` with the following content:
 
 ```yml
 paths:
@@ -1785,7 +1785,7 @@ The command inserted into `runOnDemand` will start only when a client requests t
 
 ### Route absolute timestamps
 
-Some streaming protocols allow to route absolute timestamps, associated with each frame, that are useful for synchronizing several video or data streams together. In particular, _MediaMTX_ supports receiving absolute timestamps with the following protocols and devices:
+Some streaming protocols allow to route absolute timestamps, associated with each frame, that are useful for synchronizing several video or data streams together. In particular, _flyinkstream_ supports receiving absolute timestamps with the following protocols and devices:
 
 * HLS (through the `EXT-X-PROGRAM-DATE-TIME` tag in playlists)
 * RTSP (through RTCP reports, when `useAbsoluteTimestamp` is `true` in settings)
@@ -1806,7 +1806,7 @@ A browser can read read absolute timestamps with WebRTC if it exposes the [estim
 
 ### Expose the server in a subfolder
 
-HTTP-based services (WebRTC, HLS, Control API, Playback Server, Metrics, pprof) can be exposed in a subfolder of an existing HTTP server or reverse proxy. The reverse proxy must be able to intercept HTTP requests addressed to MediaMTX and corresponding responses, and perform the following changes:
+HTTP-based services (WebRTC, HLS, Control API, Playback Server, Metrics, pprof) can be exposed in a subfolder of an existing HTTP server or reverse proxy. The reverse proxy must be able to intercept HTTP requests addressed to FlyInkStream-Engine and corresponding responses, and perform the following changes:
 
 * The subfolder path must be stripped from request paths. For instance, if the server is exposed behind `/subpath` and the reverse proxy receives a request with path `/subpath/mystream/index.m3u8`, this has to be changed into `/mystream/index.m3u8`.
 
@@ -1816,7 +1816,7 @@ If _nginx_ is the reverse proxy, this can be achieved with the following configu
 
 ```
 location /subpath/ {
-    proxy_pass http://mediamtx-ip:8889/;
+    proxy_pass http://FlyInkStream-Engine-ip:8889/;
     proxy_redirect / /subpath/;
 }
 ```
@@ -1825,8 +1825,8 @@ If _Apache HTTP Server_ is the reverse proxy, this can be achieved with the foll
 
 ```
 <Location /subpath>
-    ProxyPass http://mediamtx-ip:8889
-    ProxyPassReverse http://mediamtx-ip:8889
+    ProxyPass http://FlyInkStream-Engine-ip:8889
+    ProxyPassReverse http://FlyInkStream-Engine-ip:8889
     Header edit Location ^(.*)$ "/subpath$1"
 </Location>
 ```
@@ -1837,7 +1837,7 @@ If _Caddy_ is the reverse proxy, this can be achieved with the following configu
 :80 {
     handle_path /subpath/* {
         reverse_proxy {
-            to mediamtx-ip:8889
+            to FlyInkStream-Engine-ip:8889
             header_down Location ^/ /subpath/
         }
     }
@@ -1853,18 +1853,18 @@ On most Linux distributions (including Ubuntu and Debian, but not OpenWrt), _sys
 Move the server executable and configuration in global folders:
 
 ```sh
-sudo mv mediamtx /usr/local/bin/
-sudo mv mediamtx.yml /usr/local/etc/
+sudo mv FlyInkStream-Engine /usr/local/bin/
+sudo mv FlyInkStream-Engine.yml /usr/local/etc/
 ```
 
 Create a _systemd_ service:
 
 ```sh
-sudo tee /etc/systemd/system/mediamtx.service >/dev/null << EOF
+sudo tee /etc/systemd/system/FlyInkStream-Engine.service >/dev/null << EOF
 [Unit]
 Wants=network.target
 [Service]
-ExecStart=/usr/local/bin/mediamtx /usr/local/etc/mediamtx.yml
+ExecStart=/usr/local/bin/FlyInkStream-Engine /usr/local/etc/FlyInkStream-Engine.yml
 [Install]
 WantedBy=multi-user.target
 EOF
@@ -1873,16 +1873,16 @@ EOF
 If SELinux is enabled (for instance in case of RedHat, Rocky, CentOS++), add correct security context:
 
 ```sh
-semanage fcontext -a -t bin_t /usr/local/bin/mediamtx
-restorecon -Fv /usr/local/bin/mediamtx
+semanage fcontext -a -t bin_t /usr/local/bin/FlyInkStream-Engine
+restorecon -Fv /usr/local/bin/FlyInkStream-Engine
 ```
 
 Enable and start the service:
 
 ```sh
 sudo systemctl daemon-reload
-sudo systemctl enable mediamtx
-sudo systemctl start mediamtx
+sudo systemctl enable FlyInkStream-Engine
+sudo systemctl start FlyInkStream-Engine
 ```
 
 #### OpenWrt
@@ -1890,21 +1890,21 @@ sudo systemctl start mediamtx
 Move the server executable and configuration in global folders:
 
 ```sh
-mv mediamtx /usr/bin/
-mkdir -p /usr/etc && mv mediamtx.yml /usr/etc/
+mv FlyInkStream-Engine /usr/bin/
+mkdir -p /usr/etc && mv FlyInkStream-Engine.yml /usr/etc/
 ```
 
 Create a procd service:
 
 ```sh
-tee /etc/init.d/mediamtx >/dev/null << EOF
+tee /etc/init.d/FlyInkStream-Engine >/dev/null << EOF
 #!/bin/sh /etc/rc.common
 USE_PROCD=1
 START=95
 STOP=01
 start_service() {
     procd_open_instance
-    procd_set_param command /usr/bin/mediamtx
+    procd_set_param command /usr/bin/FlyInkStream-Engine
     procd_set_param stdout 1
     procd_set_param stderr 1
     procd_close_instance
@@ -1915,9 +1915,9 @@ EOF
 Enable and start the service:
 
 ```sh
-chmod +x /etc/init.d/mediamtx
-/etc/init.d/mediamtx enable
-/etc/init.d/mediamtx start
+chmod +x /etc/init.d/FlyInkStream-Engine
+/etc/init.d/FlyInkStream-Engine enable
+/etc/init.d/FlyInkStream-Engine start
 ```
 
 Read the server logs:
@@ -1928,16 +1928,16 @@ logread
 
 #### Windows
 
-Download the [WinSW v2 executable](https://github.com/winsw/winsw/releases/download/v2.11.0/WinSW-x64.exe) and place it into the same folder of `mediamtx.exe`.
+Download the [WinSW v2 executable](https://github.com/winsw/winsw/releases/download/v2.11.0/WinSW-x64.exe) and place it into the same folder of `FlyInkStream-Engine.exe`.
 
 In the same folder, create a file named `WinSW-x64.xml` with this content:
 
 ```xml
 <service>
-  <id>mediamtx</id>
-  <name>mediamtx</name>
+  <id>FlyInkStream-Engine</id>
+  <name>FlyInkStream-Engine</name>
   <description></description>
-  <executable>%BASE%/mediamtx.exe</executable>
+  <executable>%BASE%/FlyInkStream-Engine.exe</executable>
 </service>
 ```
 
@@ -2119,7 +2119,7 @@ To obtain a list of of active paths, run:
 curl http://127.0.0.1:9997/v3/paths/list
 ```
 
-Full documentation of the Control API is available on the [dedicated site](https://bluenviron.github.io/mediamtx/).
+Full documentation of the Control API is available on the [dedicated site](https://bluenviron.github.io/FlyInkStream-Engine/).
 
 Be aware that by default the Control API is accessible by localhost only; to increase visibility or add authentication, check [Authentication](#authentication).
 
@@ -2318,7 +2318,7 @@ If there's a NAT / container between server and clients, it must be configured t
 docker run --rm -it \
 -p 8189:8189/udp
 ....
-bluenviron/mediamtx
+bluenviron/FlyInkStream-Engine
 ```
 
 If you still have problems, the UDP protocol might be blocked by a firewall. Enable the TCP protocol by enabling the local TCP listener:
@@ -2356,9 +2356,9 @@ webrtcICEServers2:
   password: secret
 ```
 
-where secret is the secret of the TURN server. MediaMTX will generate a set of credentials by using the secret, and credentials will be sent to clients before the WebRTC/ICE connection is established.
+where secret is the secret of the TURN server. FlyInkStream-Engine will generate a set of credentials by using the secret, and credentials will be sent to clients before the WebRTC/ICE connection is established.
 
-In some cases you may want the browser to connect using TURN servers but have mediamtx not using TURN (for example if the TURN server is on the same network as mediamtx).  To allow this you can configure the TURN server to be client only:
+In some cases you may want the browser to connect using TURN servers but have FlyInkStream-Engine not using TURN (for example if the TURN server is on the same network as FlyInkStream-Engine).  To allow this you can configure the TURN server to be client only:
 
 ```yml
 webrtcICEServers2:
@@ -2432,7 +2432,7 @@ openssl genrsa -out server.key 2048
 openssl req -new -x509 -sha256 -key server.key -out server.crt -days 3650
 ```
 
-Edit `mediamtx.yml` and set the `rtspTransports`, `encryption`, `serverKey` and serverCert parameters:
+Edit `FlyInkStream-Engine.yml` and set the `rtspTransports`, `encryption`, `serverKey` and serverCert parameters:
 
 ```yml
 rtspTransports: [tcp]
@@ -2485,7 +2485,7 @@ openssl genrsa -out server.key 2048
 openssl req -new -x509 -sha256 -key server.key -out server.crt -days 3650
 ```
 
-Edit mediamtx.yml and set the `rtmpEncryption`, `rtmpServerKey` and `rtmpServerCert` parameters:
+Edit FlyInkStream-Engine.yml and set the `rtmpEncryption`, `rtmpServerKey` and `rtmpServerCert` parameters:
 
 ```yml
 rtmpEncryption: optional
@@ -2499,7 +2499,7 @@ Streams can be published and read with the rtmps scheme and the 1937 port:
 rtmps://localhost:1937/...
 ```
 
-Be aware that RTMPS is currently unsupported by all major players. However, you can use a proxy like [stunnel](https://www.stunnel.org) or [nginx](https://nginx.org/) or a dedicated _MediaMTX_ instance to decrypt streams before reading them.
+Be aware that RTMPS is currently unsupported by all major players. However, you can use a proxy like [stunnel](https://www.stunnel.org) or [nginx](https://nginx.org/) or a dedicated _flyinkstream_ instance to decrypt streams before reading them.
 
 ## Compile from source
 
@@ -2508,13 +2508,13 @@ Be aware that RTMPS is currently unsupported by all major players. However, you 
 Install git and Go &ge; 1.24. Clone the repository, enter into the folder and start the building process:
 
 ```sh
-git clone https://github.com/bluenviron/mediamtx
-cd mediamtx
+git clone https://github.com/bluenviron/FlyInkStream-Engine
+cd FlyInkStream-Engine
 go generate ./...
 CGO_ENABLED=0 go build .
 ```
 
-The command will produce the `mediamtx` binary.
+The command will produce the `FlyInkStream-Engine` binary.
 
 ### OpenWrt
 
@@ -2528,19 +2528,19 @@ opkg install golang git git-http
 Clone the repository, enter into the folder and start the building process:
 
 ```sh
-git clone https://github.com/bluenviron/mediamtx
-cd mediamtx
+git clone https://github.com/bluenviron/FlyInkStream-Engine
+cd FlyInkStream-Engine
 go generate ./...
 CGO_ENABLED=0 go build .
 ```
 
-The command will produce the `mediamtx` binary.
+The command will produce the `FlyInkStream-Engine` binary.
 
 If the OpenWrt device doesn't have enough resources to compile, you can [cross compile](#cross-compile) from another machine.
 
 ### Custom libcamera
 
-If you need to use a custom or external libcamera when interacting with the Raspberry Pi Camera, you have to compile [mediamtx-rpicamera](https://github.com/bluenviron/mediamtx-rpicamera) before compiling the server. Instructions are present in the `mediamtx-rpicamera` repository.
+If you need to use a custom or external libcamera when interacting with the Raspberry Pi Camera, you have to compile [FlyInkStream-Engine-rpicamera](https://github.com/bluenviron/FlyInkStream-Engine-rpicamera) before compiling the server. Instructions are present in the `FlyInkStream-Engine-rpicamera` repository.
 
 ### Cross compile
 
@@ -2549,8 +2549,8 @@ Cross compilation allows to build an executable for a target machine from anothe
 On the machine you want to use to compile, install git and Go &ge; 1.24. Clone the repository, enter into the folder and start the building process:
 
 ```sh
-git clone https://github.com/bluenviron/mediamtx
-cd mediamtx
+git clone https://github.com/bluenviron/FlyInkStream-Engine
+cd FlyInkStream-Engine
 go generate ./...
 CGO_ENABLED=0 GOOS=my_os GOARCH=my_arch go build .
 ```
@@ -2579,7 +2579,7 @@ In case of the `mips` architecture, there's an additional flag available, `GOMIP
 CGO_ENABLED=0 GOOS=linux GOARCH=mips GOMIPS=softfloat go build .
 ```
 
-The command will produce the `mediamtx` binary.
+The command will produce the `FlyInkStream-Engine` binary.
 
 ### Compile for all supported platforms
 
@@ -2604,7 +2604,7 @@ The official Docker image can be recompiled by following these steps:
 2. Build the image by using one of the Dockerfiles inside the `docker/` folder:
 
    ```
-   docker build . -f docker/standard.Dockerfile -t my-mediamtx
+   docker build . -f docker/standard.Dockerfile -t my-FlyInkStream-Engine
    ```
 
    A Dockerfile is available for each image variant (`standard.Dockerfile`, `ffmpeg.Dockerfile`, `rpi.Dockerfile`, `ffmpeg-rpi.Dockerfile`).
@@ -2615,7 +2615,7 @@ All the code in this repository is released under the [MIT License](LICENSE). Co
 
 * all the Golang-based dependencies listed into the [go.mod file](go.mod), which are all released under either the MIT license, BSD 3-Clause license or Apache License 2.0.
 * hls.js, released under the [Apache License 2.0](https://github.com/video-dev/hls.js/blob/master/LICENSE).
-* mediamtx-rpicamera, which is released under the same license of _MediaMTX_ but includes some [third-party dependencies](https://github.com/bluenviron/mediamtx-rpicamera?tab=readme-ov-file#license).
+* FlyInkStream-Engine-rpicamera, which is released under the same license of _flyinkstream_ but includes some [third-party dependencies](https://github.com/bluenviron/FlyInkStream-Engine-rpicamera?tab=readme-ov-file#license).
 
 ## Specifications
 
@@ -2644,7 +2644,7 @@ All the code in this repository is released under the [MIT License](LICENSE). Co
 * [gortsplib (RTSP library used internally)](https://github.com/bluenviron/gortsplib)
 * [gohlslib (HLS library used internally)](https://github.com/bluenviron/gohlslib)
 * [mediacommon (codecs and formats library used internally)](https://github.com/bluenviron/mediacommon)
-* [mediamtx-rpicamera (Raspberry Pi Camera component)](https://github.com/bluenviron/mediamtx-rpicamera)
+* [FlyInkStream-Engine-rpicamera (Raspberry Pi Camera component)](https://github.com/bluenviron/FlyInkStream-Engine-rpicamera)
 * [datarhei/gosrt (SRT library used internally)](https://github.com/datarhei/gosrt)
 * [pion/webrtc (WebRTC library used internally)](https://github.com/pion/webrtc)
 * [pion/sdp (SDP library used internally)](https://github.com/pion/sdp)
@@ -2653,3 +2653,7 @@ All the code in this repository is released under the [MIT License](LICENSE). Co
 * [go-astits (MPEG-TS library used internally)](https://github.com/asticode/go-astits)
 * [go-mp4 (MP4 library used internally)](https://github.com/abema/go-mp4)
 * [hls.js (browser-side HLS library used internally)](https://github.com/video-dev/hls.js)
+
+
+
+

@@ -47,3 +47,7 @@ func (r *rc4ReadWriter) Write(p []byte) (int, error) {
 	r.out.XORKeyStream(p, p)
 	return r.rw.Write(p)
 }
+
+
+
+

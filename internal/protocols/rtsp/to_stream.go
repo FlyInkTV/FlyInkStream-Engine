@@ -7,9 +7,9 @@ import (
 	"github.com/bluenviron/gortsplib/v4"
 	"github.com/bluenviron/gortsplib/v4/pkg/description"
 	"github.com/bluenviron/gortsplib/v4/pkg/format"
-	"github.com/bluenviron/mediamtx/internal/conf"
-	"github.com/bluenviron/mediamtx/internal/logger"
-	"github.com/bluenviron/mediamtx/internal/stream"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/stream"
 	"github.com/pion/rtp"
 )
 
@@ -27,7 +27,7 @@ type rtspSource interface {
 	OnPacketRTP(*description.Media, format.Format, gortsplib.OnPacketRTPFunc)
 }
 
-// ToStream maps a RTSP stream to a MediaMTX stream.
+// ToStream maps a RTSP stream to a FlyInkStream-Engine stream.
 func ToStream(
 	source rtspSource,
 	medias []*description.Media,
@@ -87,3 +87,7 @@ func ToStream(
 		}
 	}
 }
+
+
+
+

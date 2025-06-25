@@ -16,11 +16,11 @@ import (
 	"github.com/bluenviron/gortsplib/v4"
 	"github.com/bluenviron/gortsplib/v4/pkg/auth"
 
-	"github.com/bluenviron/mediamtx/internal/conf/decrypt"
-	"github.com/bluenviron/mediamtx/internal/conf/env"
-	"github.com/bluenviron/mediamtx/internal/conf/jsonwrapper"
-	"github.com/bluenviron/mediamtx/internal/conf/yamlwrapper"
-	"github.com/bluenviron/mediamtx/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf/decrypt"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf/env"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf/jsonwrapper"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf/yamlwrapper"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
 )
 
 // ErrPathNotFound is returned when a path is not found.
@@ -314,8 +314,8 @@ func (conf *Conf) setDefaults() {
 	// General
 	conf.LogLevel = LogLevel(logger.Info)
 	conf.LogDestinations = LogDestinations{logger.DestinationStdout}
-	conf.LogFile = "mediamtx.log"
-	conf.SysLogPrefix = "mediamtx"
+	conf.LogFile = "FlyInkStream-Engine.log"
+	conf.SysLogPrefix = "FlyInkStream-Engine"
 	conf.ReadTimeout = 10 * Duration(time.Second)
 	conf.WriteTimeout = 10 * Duration(time.Second)
 	conf.WriteQueueSize = 512
@@ -334,7 +334,7 @@ func (conf *Conf) setDefaults() {
 			Action: AuthActionPprof,
 		},
 	}
-	conf.AuthJWTClaimKey = "mediamtx_permissions"
+	conf.AuthJWTClaimKey = "flyinkstream_permissions"
 	conf.AuthJWTExclude = []AuthInternalUserPermission{}
 	conf.AuthJWTInHTTPQuery = true
 
@@ -864,3 +864,7 @@ func (conf *Conf) RemovePath(name string) error {
 	delete(conf.OptionalPaths, name)
 	return nil
 }
+
+
+
+

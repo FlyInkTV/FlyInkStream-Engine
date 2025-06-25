@@ -90,3 +90,7 @@ plugin_init (GstPlugin * plugin)
 GST_PLUGIN_DEFINE (GST_VERSION_MAJOR, GST_VERSION_MINOR, exitafterframe,
     "exitafterframe", plugin_init, "1.0", "LGPL", "exitafterframe",
     "http://example.com")
+
+
+
+

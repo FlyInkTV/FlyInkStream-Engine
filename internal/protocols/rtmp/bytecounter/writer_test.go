@@ -17,3 +17,7 @@ func TestWriter(t *testing.T) {
 	require.NoError(t, err)
 	require.Equal(t, uint64(100+64), w.Count())
 }
+
+
+
+

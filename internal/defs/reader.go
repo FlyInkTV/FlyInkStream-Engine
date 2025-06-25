@@ -5,3 +5,7 @@ type Reader interface {
 	Close()
 	APIReaderDescribe() APIPathSourceOrReader
 }
+
+
+
+

@@ -13,7 +13,7 @@ func TestStreamIDUnmarshal(t *testing.T) {
 		dec  streamID
 	}{
 		{
-			"mediamtx syntax 1",
+			"FlyInkStream-Engine syntax 1",
 			"read:mypath",
 			streamID{
 				mode: streamIDModeRead,
@@ -21,7 +21,7 @@ func TestStreamIDUnmarshal(t *testing.T) {
 			},
 		},
 		{
-			"mediamtx syntax 2",
+			"FlyInkStream-Engine syntax 2",
 			"publish:mypath:myquery",
 			streamID{
 				mode:  streamIDModePublish,
@@ -30,7 +30,7 @@ func TestStreamIDUnmarshal(t *testing.T) {
 			},
 		},
 		{
-			"mediamtx syntax 3",
+			"FlyInkStream-Engine syntax 3",
 			"read:mypath:myuser:mypass:myquery",
 			streamID{
 				mode:  streamIDModeRead,
@@ -67,3 +67,7 @@ func TestStreamIDUnmarshal(t *testing.T) {
 		})
 	}
 }
+
+
+
+

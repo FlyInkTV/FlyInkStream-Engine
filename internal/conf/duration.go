@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/bluenviron/mediamtx/internal/conf/jsonwrapper"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf/jsonwrapper"
 )
 
 var reDays = regexp.MustCompile("^(-?[0-9]+)d")
@@ -101,3 +101,7 @@ func (d *Duration) UnmarshalJSON(b []byte) error {
 func (d *Duration) UnmarshalEnv(_ string, v string) error {
 	return d.UnmarshalJSON([]byte(`"` + v + `"`))
 }
+
+
+
+

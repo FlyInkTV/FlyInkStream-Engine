@@ -4,9 +4,9 @@ package recorder
 import (
 	"time"
 
-	"github.com/bluenviron/mediamtx/internal/conf"
-	"github.com/bluenviron/mediamtx/internal/logger"
-	"github.com/bluenviron/mediamtx/internal/stream"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/stream"
 )
 
 // OnSegmentCreateFunc is the prototype of the function passed as OnSegmentCreate
@@ -112,3 +112,7 @@ func (r *Recorder) run() {
 		r.currentInstance.initialize()
 	}
 }
+
+
+
+

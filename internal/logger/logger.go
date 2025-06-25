@@ -155,3 +155,7 @@ func (lh *Logger) Log(level Level, format string, args ...interface{}) {
 		dest.log(t, level, format, args...)
 	}
 }
+
+
+
+

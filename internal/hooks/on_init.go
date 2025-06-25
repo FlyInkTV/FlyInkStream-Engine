@@ -1,9 +1,9 @@
 package hooks
 
 import (
-	"github.com/bluenviron/mediamtx/internal/conf"
-	"github.com/bluenviron/mediamtx/internal/externalcmd"
-	"github.com/bluenviron/mediamtx/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/externalcmd"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
 )
 
 // OnInitParams are the parameters of OnInit.
@@ -37,3 +37,7 @@ func OnInit(params OnInitParams) func() {
 		}
 	}
 }
+
+
+
+

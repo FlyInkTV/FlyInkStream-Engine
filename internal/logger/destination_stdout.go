@@ -30,3 +30,7 @@ func (d *destinationStdout) log(t time.Time, level Level, format string, args ..
 
 func (d *destinationStdout) close() {
 }
+
+
+
+

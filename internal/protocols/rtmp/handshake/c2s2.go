@@ -113,3 +113,7 @@ func (c C2S2) Write(w io.Writer) error {
 	_, err := w.Write(buf)
 	return err
 }
+
+
+
+

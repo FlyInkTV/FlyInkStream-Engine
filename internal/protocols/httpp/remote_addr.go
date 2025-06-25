@@ -13,3 +13,7 @@ func RemoteAddr(ctx *gin.Context) string {
 	_, port, _ := net.SplitHostPort(ctx.Request.RemoteAddr)
 	return net.JoinHostPort(ip, port)
 }
+
+
+
+

@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/bluenviron/mediamtx/internal/logger"
-	"github.com/bluenviron/mediamtx/internal/recordstore"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/recordstore"
 )
 
 type formatMPEGTSSegment struct {
@@ -67,3 +67,7 @@ func (s *formatMPEGTSSegment) Write(p []byte) (int, error) {
 
 	return s.fi.Write(p)
 }
+
+
+
+

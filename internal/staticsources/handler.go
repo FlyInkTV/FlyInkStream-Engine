@@ -8,17 +8,17 @@ import (
 	"strings"
 	"time"
 
-	"github.com/bluenviron/mediamtx/internal/conf"
-	"github.com/bluenviron/mediamtx/internal/defs"
-	"github.com/bluenviron/mediamtx/internal/logger"
-	sshls "github.com/bluenviron/mediamtx/internal/staticsources/hls"
-	ssrpicamera "github.com/bluenviron/mediamtx/internal/staticsources/rpicamera"
-	ssrtmp "github.com/bluenviron/mediamtx/internal/staticsources/rtmp"
-	ssrtsp "github.com/bluenviron/mediamtx/internal/staticsources/rtsp"
-	sssrt "github.com/bluenviron/mediamtx/internal/staticsources/srt"
-	ssudp "github.com/bluenviron/mediamtx/internal/staticsources/udp"
-	sswebrtc "github.com/bluenviron/mediamtx/internal/staticsources/webrtc"
-	"github.com/bluenviron/mediamtx/internal/stream"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/defs"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
+	sshls "github.com/FlyInkTV/FlyInkStream-Engine/internal/staticsources/hls"
+	ssrpicamera "github.com/FlyInkTV/FlyInkStream-Engine/internal/staticsources/rpicamera"
+	ssrtmp "github.com/FlyInkTV/FlyInkStream-Engine/internal/staticsources/rtmp"
+	ssrtsp "github.com/FlyInkTV/FlyInkStream-Engine/internal/staticsources/rtsp"
+	sssrt "github.com/FlyInkTV/FlyInkStream-Engine/internal/staticsources/srt"
+	ssudp "github.com/FlyInkTV/FlyInkStream-Engine/internal/staticsources/udp"
+	sswebrtc "github.com/FlyInkTV/FlyInkStream-Engine/internal/staticsources/webrtc"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/stream"
 )
 
 const (
@@ -309,3 +309,7 @@ func (s *Handler) SetNotReady(req defs.PathSourceStaticSetNotReadyReq) {
 func (s *Handler) AddReader(req defs.PathAddReaderReq) (defs.Path, *stream.Stream, error) {
 	return s.PathManager.AddReader(req)
 }
+
+
+
+

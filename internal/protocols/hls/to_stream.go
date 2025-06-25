@@ -8,9 +8,9 @@ import (
 	"github.com/bluenviron/gohlslib/v2/pkg/codecs"
 	"github.com/bluenviron/gortsplib/v4/pkg/description"
 	"github.com/bluenviron/gortsplib/v4/pkg/format"
-	"github.com/bluenviron/mediamtx/internal/logger"
-	"github.com/bluenviron/mediamtx/internal/stream"
-	"github.com/bluenviron/mediamtx/internal/unit"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/logger"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/stream"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/unit"
 )
 
 type ntpState int
@@ -28,7 +28,7 @@ func multiplyAndDivide(v, m, d int64) int64 {
 	return (secs*m + dec*m/d)
 }
 
-// ToStream maps a HLS stream to a MediaMTX stream.
+// ToStream maps a HLS stream to a FlyInkStream-Engine stream.
 func ToStream(
 	c *gohlslib.Client,
 	tracks []*gohlslib.Track,
@@ -219,3 +219,7 @@ func ToStream(
 
 	return medias, nil
 }
+
+
+
+

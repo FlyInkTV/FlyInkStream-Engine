@@ -7,12 +7,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/bluenviron/mediamtx/internal/conf"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf"
 	"github.com/stretchr/testify/require"
 )
 
 func TestFindAllPathsWithSegments(t *testing.T) {
-	dir, err := os.MkdirTemp("", "mediamtx-recordstore")
+	dir, err := os.MkdirTemp("", "FlyInkStream-Engine-recordstore")
 	require.NoError(t, err)
 	defer os.RemoveAll(dir)
 
@@ -45,7 +45,7 @@ func TestFindAllPathsWithSegments(t *testing.T) {
 }
 
 func TestFindAllPathsWithSegmentsInvalidPath(t *testing.T) {
-	dir, err := os.MkdirTemp("", "mediamtx-recordstore")
+	dir, err := os.MkdirTemp("", "FlyInkStream-Engine-recordstore")
 	require.NoError(t, err)
 	defer os.RemoveAll(dir)
 
@@ -70,7 +70,7 @@ func TestFindSegments(t *testing.T) {
 		"start before first",
 	} {
 		t.Run(ca, func(t *testing.T) {
-			dir, err := os.MkdirTemp("", "mediamtx-recordstore")
+			dir, err := os.MkdirTemp("", "FlyInkStream-Engine-recordstore")
 			require.NoError(t, err)
 			defer os.RemoveAll(dir)
 
@@ -140,3 +140,7 @@ func TestFindSegments(t *testing.T) {
 		})
 	}
 }
+
+
+
+

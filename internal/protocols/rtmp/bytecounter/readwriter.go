@@ -18,3 +18,7 @@ func NewReadWriter(rw io.ReadWriter) *ReadWriter {
 		Writer: NewWriter(rw),
 	}
 }
+
+
+
+

@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/bluenviron/mediamtx/internal/conf/jsonwrapper"
+	"github.com/FlyInkTV/FlyInkStream-Engine/internal/conf/jsonwrapper"
 )
 
 // AuthMethod is an authentication method.
@@ -63,3 +63,7 @@ func (d *AuthMethod) UnmarshalJSON(b []byte) error {
 func (d *AuthMethod) UnmarshalEnv(_ string, v string) error {
 	return d.UnmarshalJSON([]byte(`"` + v + `"`))
 }
+
+
+
+

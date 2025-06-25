@@ -26,4 +26,8 @@ COPY --from=base /$TARGETPLATFORM /
 
 COPY --from=binaries /$TARGETPLATFORM /
 
-ENTRYPOINT [ "/mediamtx" ]
+ENTRYPOINT [ "/flyinkstream-engine" ]
+
+
+
+
